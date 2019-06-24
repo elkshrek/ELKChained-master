@@ -15,7 +15,7 @@
  
  @return a new object
  */
-+ (instancetype)elk_make
++ (NSObject *)elk_make
 {
     id object = [[self alloc] init];
     return object;
@@ -27,7 +27,7 @@
  @param block block
  @return a new object
  */
-+ (instancetype)elk_makeBlock:(void (^)(id _Nonnull))block
++ (NSObject *)elk_makeBlock:(void (^)(NSObject * _Nonnull))block
 {
     id object = [[self alloc] init];
     if (block) {

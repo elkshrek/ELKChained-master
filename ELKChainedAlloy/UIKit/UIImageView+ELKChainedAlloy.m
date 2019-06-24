@@ -12,6 +12,33 @@
 
 
 /**
+ make a UIImageView, return a new object
+ 
+ @return a new UIImageView
+ */
++ (UIImageView * _Nonnull)elk_make
+{
+    return [[UIImageView alloc] init];
+}
+
+/**
+ make a UIImageView, return a new object
+ 
+ @param block block
+ @return a new UIImageView
+ */
++ (UIImageView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UIImageView * _Nonnull make))block
+{
+    UIImageView *make = [[UIImageView alloc] init];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+
+
+/**
  set image
  */
 - (UIImageView * _Nonnull (^)(UIImage * _Nonnull))elk_setImage

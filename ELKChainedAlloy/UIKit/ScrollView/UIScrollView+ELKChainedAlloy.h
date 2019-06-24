@@ -14,6 +14,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ make a UIScrollView, return a new object
+ 
+ @return a new UIScrollView
+ */
++ (UIScrollView * _Nonnull)elk_make;
+
+/**
+ make a UIScrollView, return a new object
+ 
+ @param block block
+ @return a new UIScrollView
+ */
++ (UIScrollView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UIScrollView * _Nonnull make))block;
+
+
+
+
+
+
+/**
  set content offset
  */
 @property (nonatomic, strong, readonly) UIScrollView * _Nonnull (^elk_setContentOffset)(CGPoint offset);

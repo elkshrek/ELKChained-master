@@ -14,6 +14,44 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ make a UITableView, return a new object
+ 
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_make;
+
+/**
+ make a UITableView, return a new object
+ 
+ @param block block
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UITableView * _Nonnull make))block;
+
+/**
+ make a UITableView, return a new object
+
+ @param style UITableViewStyle
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_makeStyle:(UITableViewStyle)style;
+
+/**
+ make a UITableView, return a new object
+
+ @param style UITableViewStyle
+ @param block block
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_makeStyle:(UITableViewStyle)style block:(void (^ _Nullable)(UITableView * _Nonnull make))block;
+
+
+
+
+
+
+
+/**
  set dataSource
  */
 @property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_setDataSource)(id<UITableViewDataSource> _Nullable dataSource);

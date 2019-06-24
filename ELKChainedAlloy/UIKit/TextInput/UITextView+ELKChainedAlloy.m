@@ -12,6 +12,33 @@
 
 
 /**
+ make a UITextView, return a new object
+ 
+ @return a new UITextView
+ */
++ (UITextView * _Nonnull)elk_make
+{
+    return [[UITextView alloc] init];
+}
+
+/**
+ make a UITextView, return a new object
+ 
+ @param block block
+ @return a new UITextView
+ */
++ (UITextView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UITextView * _Nonnull make))block
+{
+    UITextView *make = [[UITextView alloc] init];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+
+
+/**
  set text
  */
 - (UITextView * _Nonnull (^)(NSString * _Nullable))elk_setText

@@ -11,6 +11,63 @@
 @implementation UITableView (ELKChainedAlloy)
 
 
+
+/**
+ make a UITableView, return a new object
+ 
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_make
+{
+    UITableView *make = [[self alloc] init];
+    return make;
+}
+
+/**
+ make a UITableView, return a new object
+ 
+ @param block block
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UITableView * _Nonnull make))block
+{
+    UITableView *make = [[self alloc] init];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+/**
+ make a UITableView, return a new object
+ 
+ @param style UITableViewStyle
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_makeStyle:(UITableViewStyle)style
+{
+    UITableView *make = [[self alloc] initWithFrame:CGRectZero style:style];
+    return make;
+}
+
+/**
+ make a UITableView, return a new object
+ 
+ @param style UITableViewStyle
+ @param block block
+ @return a new UITableView
+ */
++ (UITableView * _Nonnull)elk_makeStyle:(UITableViewStyle)style block:(void (^ _Nullable)(UITableView * _Nonnull make))block
+{
+    UITableView *make = [[self alloc] initWithFrame:CGRectZero style:style];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+
+
 /**
  set dataSource
  */

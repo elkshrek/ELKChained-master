@@ -13,6 +13,21 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UILabel (ELKChainedAlloy)
 
 
+/**
+ make a UILabel, return a new object
+ 
+ @return a new UILabel
+ */
++ (UILabel * _Nonnull)elk_make;
+
+/**
+ make a UILabel, return a new object
+
+ @param block block
+ @return a new UILabel
+ */
++ (UILabel * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UILabel * _Nonnull make))block;
+
 
 /**
  set text

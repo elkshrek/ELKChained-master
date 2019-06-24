@@ -19,6 +19,8 @@
     [super viewDidLoad];
     
     
+    
+    
     UIButton *btn = [UIButton elk_makeBlock:^(UIButton * _Nonnull make) {
         
         make.elk_setTitle(@"ddd", ELKCSNormal);
@@ -62,6 +64,22 @@
 //    
 //    ELKTTTTView *tView = [ELKTTTTView new];
 //    tView.elk_tttttry.elk_bbbb;
+    
+    [UILabel elk_makeBlock:^(UILabel * _Nonnull make) {
+        make.elk_setText(@"tt")
+        .elk_setFont([UIFont systemFontOfSize:12])
+        .elk_setEnable(YES)
+        .elk_setNumberOfLines(0)
+        .elk_setTextColor(UIColor.blackColor);
+    }];
+    [UILabel elk_makeBlock:nil].elk_setTextColor(UIColor.whiteColor).elk_setText(@"ddd");
+    
+    [UIButton elk_makeWithType:UIButtonTypeCustom block:^(UIButton * _Nonnull make) {
+        
+    }];
+    
+    
+    [UICollectionView elk_make].collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
     
 }
 

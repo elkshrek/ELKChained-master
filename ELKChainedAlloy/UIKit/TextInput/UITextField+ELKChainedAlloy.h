@@ -14,6 +14,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ make a UITextField, return a new object
+ 
+ @return a new UITextField
+ */
++ (UITextField * _Nonnull)elk_make;
+
+/**
+ make a UITextField, return a new object
+ 
+ @param block block
+ @return a new UITextField
+ */
++ (UITextField * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UITextField * _Nonnull make))block;
+
+
+
+/**
  set text
  */
 @property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setText)(NSString * _Nonnull text);

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return a new object
  */
-+ (instancetype)elk_make;
++ (NSObject * _Nonnull)elk_make;
 
 /**
  make a object, return a new object
@@ -26,18 +26,43 @@ NS_ASSUME_NONNULL_BEGIN
  @param block block
  @return a new object
  */
-+ (instancetype)elk_makeBlock:(void (^)(id _Nonnull make))block;
++ (NSObject * _Nonnull)elk_makeBlock:(void (^ _Nullable)(NSObject * _Nonnull make))block;
 
 
-
+/**
+ perform select on main
+ */
 @property (nonatomic, strong, readonly) NSObject * _Nonnull (^elk_performSelOnMain)(SEL selector, id _Nonnull obj, BOOL untilDone);
+
+/**
+ perform select on thread
+ */
 @property (nonatomic, strong, readonly) NSObject * _Nonnull (^elk_performSelOnThread)(SEL selector, NSThread * _Nonnull thread, id _Nonnull obj, BOOL untilDone);
+
+/**
+ perform select in background
+ */
 @property (nonatomic, strong, readonly) NSObject * _Nonnull (^elk_performSelInBackground)(SEL selector, id _Nonnull obj);
+
+/**
+ perform select with delay
+ */
 @property (nonatomic, strong, readonly) NSObject * _Nonnull (^elk_performSelWithDelay)(SEL selector, id _Nonnull obj, NSTimeInterval tInterval);
 
 
+/**
+ set value for key
+ */
 @property (nonatomic, strong, readonly) NSObject * _Nonnull (^elk_setValueForKey)(id _Nonnull object, NSString * _Nonnull key);
+
+/**
+ value for key
+ */
 @property (nonatomic, copy, readonly) id _Nonnull (^elk_valueForKey)(NSString * _Nonnull key);
+
+/**
+ set value for key path
+ */
 @property (nonatomic, strong, readonly) NSObject * _Nonnull (^elk_setValueForKeyPath)(id _Nonnull object, NSString * _Nonnull keyPath);
 @property (nonatomic, copy, readonly) id _Nonnull (^elk_valueForKeyPath)(NSString * _Nonnull keyPath);
 @property (nonatomic, strong, readonly) NSObject * _Nonnull (^elk_setValuesForKeysWithDict)(NSDictionary * _Nonnull dict);

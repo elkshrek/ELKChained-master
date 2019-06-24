@@ -14,6 +14,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ make a UITextView, return a new object
+ 
+ @return a new UITextView
+ */
++ (UITextView * _Nonnull)elk_make;
+
+/**
+ make a UITextView, return a new object
+ 
+ @param block block
+ @return a new UITextView
+ */
++ (UITextView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UITextView * _Nonnull make))block;
+
+
+
+
+/**
  set text
  */
 @property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setText)(NSString * _Nullable text);

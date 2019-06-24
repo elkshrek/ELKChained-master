@@ -12,6 +12,33 @@
 
 
 /**
+ make a UITextField, return a new object
+ 
+ @return a new UITextField
+ */
++ (UITextField * _Nonnull)elk_make
+{
+    return [[UITextField alloc] init];
+}
+
+/**
+ make a UITextField, return a new object
+ 
+ @param block block
+ @return a new UITextField
+ */
++ (UITextField * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UITextField * _Nonnull make))block
+{
+    UITextField *make = [[UITextField alloc] init];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+
+
+/**
  set text
  */
 - (UITextField * _Nonnull (^)(NSString * _Nonnull))elk_setText

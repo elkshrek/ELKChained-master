@@ -12,6 +12,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (ELKChainedAlloy)
 
+
+/**
+ make a UIView, return a new object
+ 
+ @return a new UIView
+ */
++ (UIView * _Nonnull)elk_make;
+
+/**
+ make a UIView, return a new object
+ 
+ @param block block
+ @return a new UIView
+ */
++ (UIView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UIView * _Nonnull make))block;
+
+
+
 #pragma mark - base property
 /**
  set frame

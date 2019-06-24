@@ -72,30 +72,30 @@
 
 #pragma mark - make a button
 /**
- make a button, return a new button
-
- @return a new button object
+ make a UIButton, return a new object
+ 
+ @return a new UIButton
  */
-+ (instancetype)elk_make
++ (UIButton * _Nonnull)elk_make
 {
-    UIButton *button = [[UIButton alloc] init];
-    return button;
+    return [[UIButton alloc] init];
 }
 
 /**
- make a button, return a new button
-
+ make a UIButton, return a new object
+ 
  @param block block
- @return a new button object
+ @return a new UIButton
  */
-+ (instancetype)elk_makeBlock:(void (^)(UIButton * _Nonnull make))block
++ (UIButton * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UIButton * _Nonnull make))block
 {
-    UIButton *button = [self elk_make];
+    UIButton *make = [[UIButton alloc] init];
     if (block) {
-        block(button);
+        block(make);
     }
-    return button;
+    return make;
 }
+
 
 /**
  make a button with UIButtonType, return a new button
@@ -103,7 +103,7 @@
  @param btnType UIButtonType
  @return a new button object
  */
-+ (instancetype)elk_makeWithType:(UIButtonType)btnType
++ (UIButton *)elk_makeWithType:(UIButtonType)btnType
 {
     UIButton *button = [UIButton buttonWithType:btnType];
     return button;
@@ -116,7 +116,7 @@
  @param block block
  @return a new button object
  */
-+ (instancetype)elk_makeWithType:(UIButtonType)btnType block:(void (^)(UIButton * _Nonnull make))block
++ (UIButton *)elk_makeWithType:(UIButtonType)btnType block:(void (^)(UIButton * _Nonnull))block
 {
     UIButton *button = [self elk_makeWithType:btnType];
     if (block) {
@@ -303,13 +303,16 @@
     };
 }
 
-//- (UIButton * _Nonnull (^)(CGRect))elk_setFrame
-//{
-//    return ^(CGRect f) {
-//        self.frame = f;
-//        return self;
-//    };
-//}
+/**
+ set frame
+ */
+- (UIButton * _Nonnull (^)(CGRect))elk_setFrame
+{
+    return ^(CGRect f) {
+        self.frame = f;
+        return self;
+    };
+}
 
 /**
  set button background image for ELKCSHighlighted(UIControlStateHighlighted)

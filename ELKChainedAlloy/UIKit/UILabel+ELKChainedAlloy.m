@@ -12,6 +12,33 @@
 
 
 /**
+ make a UILabel, return a new object
+ 
+ @return a new UILabel
+ */
++ (UILabel *)elk_make
+{
+    return [[UILabel alloc] init];
+}
+
+
+/**
+ make a UILabel, return a new object
+ 
+ @param block block
+ @return a new UILabel
+ */
++ (UILabel *)elk_makeBlock:(void (^)(UILabel * _Nonnull))block
+{
+    UILabel *make = [[UILabel alloc] init];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+
+/**
  set text
  */
 - (UILabel * _Nonnull (^)(NSString * _Nonnull))elk_setText

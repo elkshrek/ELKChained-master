@@ -58,19 +58,20 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 
 #pragma mark - make a button
 /**
- make a button, return a new button
+ make a UIButton, return a new object
  
- @return a new button object
+ @return a new UIButton
  */
-+ (instancetype)elk_make;
++ (UIButton * _Nonnull)elk_make;
 
 /**
- make a button, return a new button
+ make a UIButton, return a new object
  
  @param block block
- @return a new button object
+ @return a new UIButton
  */
-+ (instancetype)elk_makeBlock:(void (^)(UIButton * _Nonnull make))block;
++ (UIButton * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UIButton * _Nonnull make))block;
+
 
 /**
  make a button with UIButtonType, return a new button
@@ -78,7 +79,7 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
  @param btnType UIButtonType
  @return a new button object
  */
-+ (instancetype)elk_makeWithType:(UIButtonType)btnType;
++ (UIButton * _Nonnull)elk_makeWithType:(UIButtonType)btnType;
 
 /**
  make a button with UIButtonType, return a new button
@@ -87,7 +88,7 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
  @param block block
  @return a new button object
  */
-+ (instancetype)elk_makeWithType:(UIButtonType)btnType block:(void (^)(UIButton * _Nonnull make))block;
++ (UIButton * _Nonnull)elk_makeWithType:(UIButtonType)btnType block:(void (^ _Nullable)(UIButton * _Nonnull make))block;
 
 
 #pragma mark - set button title
@@ -160,6 +161,10 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
  */
 //@property (nonatomic, strong, readonly) UIButton * _Nonnull (^elk_setBackColor)(UIColor * _Nonnull color);
 
+
+/**
+ set frame
+ */
 @property (nonatomic, strong, readonly) UIButton * _Nonnull (^elk_setFrame)(CGRect frame);
 
 #pragma mark - set button background image

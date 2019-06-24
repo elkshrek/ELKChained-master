@@ -12,6 +12,33 @@
 
 
 /**
+ make a UIScrollView, return a new object
+ 
+ @return a new UIScrollView
+ */
++ (UIScrollView *)elk_make
+{
+    return [[UIScrollView alloc] init];
+}
+
+/**
+ make a UIScrollView, return a new object
+ 
+ @param block block
+ @return a new UIScrollView
+ */
++ (UIScrollView *)elk_makeBlock:(void (^)(UIScrollView * _Nonnull))block
+{
+    UIScrollView *make = [[UIScrollView alloc] init];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+
+
+/**
  set content offset
  */
 - (UIScrollView * _Nonnull (^)(CGPoint))elk_setContentOffset

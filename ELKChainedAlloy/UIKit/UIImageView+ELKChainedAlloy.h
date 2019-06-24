@@ -13,6 +13,22 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImageView (ELKChainedAlloy)
 
 
+/**
+ make a UIImageView, return a new object
+ 
+ @return a new UIImageView
+ */
++ (UIImageView * _Nonnull)elk_make;
+
+/**
+ make a UIImageView, return a new object
+ 
+ @param block block
+ @return a new UIImageView
+ */
++ (UIImageView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UIImageView * _Nonnull make))block;
+
+
 
 /**
  set image
