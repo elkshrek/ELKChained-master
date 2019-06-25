@@ -120,185 +120,17 @@
 {
     UIButton *button = [self elk_makeWithType:btnType];
     if (block) {
-        #pragma clang diagnostic push
-        #pragma clang diagnostic ignored "-Wenum-conversion"
         block(button);
-        #pragma clang diagnostic pop
     }
     return button;
 }
 
-#pragma mark - set button title
-/**
- set button title with ELKControlState
- */
-- (UIButton * _Nonnull (^)(NSString * _Nonnull, ELKControlState))elk_setTitle
+
+// The tintColor is inherited through the superview hierarchy. See UIView for more information.
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTintColor
 {
-    return ^(NSString * _Nonnull title, ELKControlState state) {
-        UIControlState cState = (UIControlState)state;
-        [self setTitle:title forState:cState];
-        return self;
-    };
-}
-
-/**
- set button title for ELKCSNormal(UIControlStateNormal)
- */
-- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setNormalTitle
-{
-    return ^(NSString * _Nonnull title) {
-        [self setTitle:title forState:UIControlStateNormal];
-        return self;
-    };
-}
-
-/**
- set button title for ELKCSHighlighted(UIControlStateHighlighted)
- */
-- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setHighlightedTitle
-{
-    return ^(NSString * _Nonnull title) {
-        [self setTitle:title forState:UIControlStateHighlighted];
-        return self;
-    };
-}
-
-/**
- set button title for ELKCSDisabled(UIControlStateDisabled)
- */
-- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setDisabledTitle
-{
-    return ^(NSString * _Nonnull title) {
-        [self setTitle:title forState:UIControlStateDisabled];
-        return self;
-    };
-}
-
-/**
- set button title for ELKCSSelected(UIControlStateSelected)
- */
-- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setSelectedTitle
-{
-    return ^(NSString * _Nonnull title) {
-        [self setTitle:title forState:UIControlStateSelected];
-        return self;
-    };
-}
-
-/**
- set button title for ELKCSFocused(UIControlStateFocused)
- */
-- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setFocusedTitle
-{
-    return ^(NSString * _Nonnull title) {
-        [self setTitle:title forState:UIControlStateFocused];
-        return self;
-    };
-}
-
-
-#pragma mark - set button title color
-/**
- set button title color with ELKControlState
- */
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull, ELKControlState))elk_setTitleColor
-{
-    return ^(UIColor * _Nonnull color, ELKControlState state) {
-        UIControlState cState = (UIControlState)state;
-        [self setTitleColor:color forState:cState];
-        return self;
-    };
-}
-
-/**
- set button title color for ELKCSNormal(UIControlStateNormal)
- */
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setNormalTitleColor
-{
-    return ^(UIColor * _Nonnull color) {
-        [self setTitleColor:color forState:UIControlStateNormal];
-        return self;
-    };
-}
-
-/**
- set button title color for ELKCSHighlighted(UIControlStateHighlighted)
- */
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setHighlightedTitleColor
-{
-    return ^(UIColor * _Nonnull color) {
-        [self setTitleColor:color forState:UIControlStateHighlighted];
-        return self;
-    };
-}
-
-/**
- set button title color for ELKCSDisabled(UIControlStateDisabled)
- */
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setDisabledTitleColor
-{
-    return ^(UIColor * _Nonnull color) {
-        [self setTitleColor:color forState:UIControlStateDisabled];
-        return self;
-    };
-}
-
-/**
- set button title color for ELKCSSelected(UIControlStateSelected)
- */
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setSelectedTitleColor
-{
-    return ^(UIColor * _Nonnull color) {
-        [self setTitleColor:color forState:UIControlStateSelected];
-        return self;
-    };
-}
-
-/**
- set button title color for ELKCSFocused(UIControlStateFocused)
- */
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setFocusedTitleColor
-{
-    return ^(UIColor * _Nonnull color) {
-        [self setTitleColor:color forState:UIControlStateFocused];
-        return self;
-    };
-}
-
-
-#pragma mark - set button background color
-/**
- set button background color
- */
-//- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setBackColor
-//{
-//    return ^(UIColor * _Nonnull color) {
-//        [self setBackgroundColor:color];
-//        return self;
-//    };
-//}
-
-
-#pragma mark - set button background image
-/**
- set button background image with ELKControlState
- */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull, ELKControlState))elk_setBackImage
-{
-    return ^(UIImage * _Nonnull image, ELKControlState state) {
-        UIControlState cState = (UIControlState)state;
-        [self setBackgroundImage:image forState:cState];
-        return self;
-    };
-}
-
-/**
- set button background image for ELKCSNormal(UIControlStateNormal)
- */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setNormalBackImage
-{
-    return ^(UIImage * _Nonnull image) {
-        [self setBackgroundImage:image forState:UIControlStateNormal];
+    return ^(UIColor * tintColor) {
+        [self setTintColor:tintColor];
         return self;
     };
 }
@@ -314,10 +146,282 @@
     };
 }
 
+
 /**
- set button background image for ELKCSHighlighted(UIControlStateHighlighted)
+ set title lable font
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setHighlightedBackImage
+- (UIButton * _Nonnull (^)(UIFont * _Nonnull))elk_setTitleLabelFont
+{
+    return ^(UIFont * font) {
+        self.titleLabel.font = font;
+        return self;
+    };
+}
+
+
+#pragma mark - set button title
+/**
+ set button title with UIControlState
+ */
+- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIControlState))elk_setTitle
+{
+    return ^(NSString * _Nonnull title, UIControlState state) {
+        [self setTitle:title forState:state];
+        return self;
+    };
+}
+
+/**
+ set button title for UIControlStateNormal
+ */
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setTitleForNormal
+{
+    return ^(NSString * _Nonnull title) {
+        [self setTitle:title forState:UIControlStateNormal];
+        return self;
+    };
+}
+
+/**
+ set button title for UIControlStateHighlighted
+ */
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setTitleForHighlighted
+{
+    return ^(NSString * _Nonnull title) {
+        [self setTitle:title forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+
+/**
+ set button title for UIControlStateDisabled
+ */
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setTitleForDisabled
+{
+    return ^(NSString * _Nonnull title) {
+        [self setTitle:title forState:UIControlStateDisabled];
+        return self;
+    };
+}
+
+/**
+ set button title for UIControlStateSelected
+ */
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setTitleForSelected
+{
+    return ^(NSString * _Nonnull title) {
+        [self setTitle:title forState:UIControlStateSelected];
+        return self;
+    };
+}
+
+/**
+ set button title for UIControlStateFocused
+ */
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))elk_setTitleForFocused
+{
+    return ^(NSString * _Nonnull title) {
+        [self setTitle:title forState:UIControlStateFocused];
+        return self;
+    };
+}
+
+
+#pragma mark - set button title color
+/**
+ set button title color with UIControlState
+ */
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))elk_setTitleColor
+{
+    return ^(UIColor * _Nonnull color, UIControlState state) {
+        [self setTitleColor:color forState:state];
+        return self;
+    };
+}
+
+/**
+ set button title color for UIControlStateNormal
+ */
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTitleColorForNormal
+{
+    return ^(UIColor * _Nonnull color) {
+        [self setTitleColor:color forState:UIControlStateNormal];
+        return self;
+    };
+}
+
+/**
+ set button title color for UIControlStateHighlighted
+ */
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTitleColorForHighlighted
+{
+    return ^(UIColor * _Nonnull color) {
+        [self setTitleColor:color forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+
+/**
+ set button title color for UIControlStateDisabled
+ */
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTitleColorForDisabled
+{
+    return ^(UIColor * _Nonnull color) {
+        [self setTitleColor:color forState:UIControlStateDisabled];
+        return self;
+    };
+}
+
+/**
+ set button title color for UIControlStateSelected
+ */
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTitleColorForSelected
+{
+    return ^(UIColor * _Nonnull color) {
+        [self setTitleColor:color forState:UIControlStateSelected];
+        return self;
+    };
+}
+
+/**
+ set button title color for UIControlStateFocused
+ */
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTitleColorForFocused
+{
+    return ^(UIColor * _Nonnull color) {
+        [self setTitleColor:color forState:UIControlStateFocused];
+        return self;
+    };
+}
+
+// default is nil. use 50% black
+- (UIButton * _Nonnull (^)(UIColor * _Nullable, UIControlState))elk_setTitleShadowColor UI_APPEARANCE_SELECTOR
+{
+    return ^(UIColor * _Nullable shadowColor, UIControlState state) {
+        [self setTitleShadowColor:shadowColor forState:state];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(UIColor * _Nullable))elk_setTitleShadowColorForNormal UI_APPEARANCE_SELECTOR
+{
+    return ^(UIColor * _Nullable shadowColor) {
+        [self setTitleShadowColor:shadowColor forState:UIControlStateNormal];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(UIColor * _Nullable))elk_setTitleShadowColorForHighlighted UI_APPEARANCE_SELECTOR
+{
+    return ^(UIColor * _Nullable shadowColor) {
+        [self setTitleShadowColor:shadowColor forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(UIColor * _Nullable))elk_setTitleShadowColorForDisabled UI_APPEARANCE_SELECTOR
+{
+    return ^(UIColor * _Nullable shadowColor) {
+        [self setTitleShadowColor:shadowColor forState:UIControlStateDisabled];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(UIColor * _Nullable))elk_setTitleShadowColorForSelected UI_APPEARANCE_SELECTOR
+{
+    return ^(UIColor * _Nullable shadowColor) {
+        [self setTitleShadowColor:shadowColor forState:UIControlStateSelected];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(UIColor * _Nullable))elk_setTitleShadowColorForFocused UI_APPEARANCE_SELECTOR
+{
+    return ^(UIColor * _Nullable shadowColor) {
+        [self setTitleShadowColor:shadowColor forState:UIControlStateFocused];
+        return self;
+    };
+}
+
+// default is nil. should be same size if different for different states
+- (UIButton * _Nonnull (^)(NSAttributedString * _Nullable, UIControlState))elk_setAttributedTitle NS_AVAILABLE_IOS(6_0)
+{
+    return ^(NSAttributedString * _Nullable title, UIControlState state) {
+        [self setAttributedTitle:title forState:state];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSAttributedString * _Nullable))elk_setAttributedTitleForNormal NS_AVAILABLE_IOS(6_0)
+{
+    return ^(NSAttributedString * _Nullable title) {
+        [self setAttributedTitle:title forState:UIControlStateNormal];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSAttributedString * _Nullable))elk_setAttributedTitleForHighlighted NS_AVAILABLE_IOS(6_0)
+{
+    return ^(NSAttributedString * _Nullable title) {
+        [self setAttributedTitle:title forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSAttributedString * _Nullable))elk_setAttributedTitleForDisabled NS_AVAILABLE_IOS(6_0)
+{
+    return ^(NSAttributedString * _Nullable title) {
+        [self setAttributedTitle:title forState:UIControlStateDisabled];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSAttributedString * _Nullable))elk_setAttributedTitleForSelected NS_AVAILABLE_IOS(6_0)
+{
+    return ^(NSAttributedString * _Nullable title) {
+        [self setAttributedTitle:title forState:UIControlStateSelected];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSAttributedString * _Nullable))elk_setAttributedTitleForFocused NS_AVAILABLE_IOS(6_0)
+{
+    return ^(NSAttributedString * _Nullable title) {
+        [self setAttributedTitle:title forState:UIControlStateFocused];
+        return self;
+    };
+}
+
+#pragma mark - set button background color
+/**
+ set button background color
+ */
+- (UIButton * _Nonnull (^)(UIColor * _Nullable))elk_setBackgroundColor
+{
+    return ^(UIColor * _Nullable bgColor) {
+        [self setBackgroundColor:bgColor];
+        return self;
+    };
+}
+
+
+#pragma mark - set button background image
+/**
+ set button background image with UIControlState
+ */
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))elk_setBackgroundImage
+{
+    return ^(UIImage * _Nonnull image, UIControlState state) {
+        [self setBackgroundImage:image forState:state];
+        return self;
+    };
+}
+
+/**
+ set button background image for UIControlStateNormal
+ */
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setBackgroundImageForNormal
+{
+    return ^(UIImage * _Nonnull image) {
+        [self setBackgroundImage:image forState:UIControlStateNormal];
+        return self;
+    };
+}
+
+/**
+ set button background image for UIControlStateHighlighted
+ */
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setBackgroundImageForHighlighted
 {
     return ^(UIImage * _Nonnull image) {
         [self setBackgroundImage:image forState:UIControlStateHighlighted];
@@ -326,9 +430,9 @@
 }
 
 /**
- set button background image for ELKCSDisabled(UIControlStateDisabled)
+ set button background image for UIControlStateDisabled
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setDisabledBackImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setBackgroundImageForDisabled
 {
     return ^(UIImage * _Nonnull image) {
         [self setBackgroundImage:image forState:UIControlStateDisabled];
@@ -337,9 +441,9 @@
 }
 
 /**
- set button background image for ELKCSSelected(UIControlStateSelected)
+ set button background image for UIControlStateSelected
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setSelectedBackImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setBackgroundImageForSelected
 {
     return ^(UIImage * _Nonnull image) {
         [self setBackgroundImage:image forState:UIControlStateSelected];
@@ -348,9 +452,9 @@
 }
 
 /**
- set button background image for ELKCSFocused(UIControlStateFocused)
+ set button background image for UIControlStateFocused
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setFocusedBackImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setBackgroundImageForFocused
 {
     return ^(UIImage * _Nonnull image) {
         [self setBackgroundImage:image forState:UIControlStateFocused];
@@ -363,19 +467,18 @@
 /**
  set button image with ELKControlState
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull, ELKControlState))elk_setImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))elk_setImage
 {
-    return ^(UIImage * _Nonnull image, ELKControlState state) {
-        UIControlState cState = (UIControlState)state;
-        [self setImage:image forState:cState];
+    return ^(UIImage * _Nonnull image, UIControlState state) {
+        [self setImage:image forState:state];
         return self;
     };
 }
 
 /**
- set button image for ELKCSNormal(UIControlStateNormal)
+ set button image for UIControlStateNormal
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setNormalImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setImageForNormal
 {
     return ^(UIImage * _Nonnull image) {
         [self setImage:image forState:UIControlStateNormal];
@@ -384,9 +487,9 @@
 }
 
 /**
- set button image for ELKCSHighlighted(UIControlStateHighlighted)
+ set button image for UIControlStateHighlighted
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setHighlightedImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setImageForHighlighted
 {
     return ^(UIImage * _Nonnull image) {
         [self setImage:image forState:UIControlStateHighlighted];
@@ -395,9 +498,9 @@
 }
 
 /**
- set button image for ELKCSDisabled(UIControlStateDisabled)
+ set button image for UIControlStateDisabled
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setDisabledImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setImageForDisabled
 {
     return ^(UIImage * _Nonnull image) {
         [self setImage:image forState:UIControlStateDisabled];
@@ -406,9 +509,9 @@
 }
 
 /**
- set button image for ELKCSSelected(UIControlStateSelected)
+ set button image for UIControlStateSelected
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setSelectedImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setImageForSelected
 {
     return ^(UIImage * _Nonnull image) {
         [self setImage:image forState:UIControlStateSelected];
@@ -417,15 +520,177 @@
 }
 
 /**
- set button image for ELKCSFocused(UIControlStateFocused)
+ set button image for UIControlStateFocused
  */
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setFocusedImage
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull))elk_setImageForFocused
 {
     return ^(UIImage * _Nonnull image) {
         [self setImage:image forState:UIControlStateFocused];
         return self;
     };
 }
+
+/**
+ set content edge insets
+ */
+- (UIButton * _Nonnull (^)(UIEdgeInsets))elk_setContentEdgeInsets
+{
+    return ^(UIEdgeInsets insets) {
+        [self setContentEdgeInsets:insets];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(CGFloat, CGFloat, CGFloat, CGFloat))elk_setContentEdgeInsetsMake
+{
+    return ^(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
+        [self setContentEdgeInsets:UIEdgeInsetsMake(top, left, bottom, right)];
+        return self;
+    };
+}
+
+
+/**
+ default is UIEdgeInsetsZero
+ */
+- (UIButton * _Nonnull (^)(UIEdgeInsets))elk_setTitleEdgeInsets
+{
+    return ^(UIEdgeInsets insets) {
+        [self setTitleEdgeInsets:insets];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(CGFloat, CGFloat, CGFloat, CGFloat))elk_setTitleEdgeInsetsMake
+{
+    return ^(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
+        [self setTitleEdgeInsets:UIEdgeInsetsMake(top, left, bottom, right)];
+        return self;
+    };
+}
+
+/**
+ default is UIEdgeInsetsZero
+ */
+- (UIButton * _Nonnull (^)(UIEdgeInsets))elk_setImageEdgeInsets
+{
+    return ^(UIEdgeInsets insets) {
+        [self setImageEdgeInsets:insets];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(CGFloat, CGFloat, CGFloat, CGFloat))elk_setImageEdgeInsetsMake
+{
+    return ^(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
+        [self setImageEdgeInsets:UIEdgeInsetsMake(top, left, bottom, right)];
+        return self;
+    };
+}
+
+
+// default is NO. if YES, shadow reverses to shift between engrave and emboss appearance
+- (UIButton * _Nonnull (^)(BOOL))elk_setReversesTitleShadowWhenHighlighted
+{
+    return ^(BOOL reverses) {
+        [self setReversesTitleShadowWhenHighlighted:reverses];
+        return self;
+    };
+}
+
+// default is YES. if YES, image is drawn darker when highlighted(pressed)
+- (UIButton * _Nonnull (^)(BOOL))elk_setAdjustsImageWhenHighlighted
+{
+    return ^(BOOL adjust) {
+        [self setAdjustsImageWhenHighlighted:adjust];
+        return self;
+    };
+}
+
+// default is YES. if YES, image is drawn lighter when disabled
+- (UIButton * _Nonnull (^)(BOOL))elk_setAdjustsImageWhenDisabled
+{
+    return ^(BOOL adjust) {
+        [self setAdjustsImageWhenDisabled:adjust];
+        return self;
+    };
+}
+
+// default is NO. if YES, show a simple feedback (currently a glow) while highlighted
+- (UIButton * _Nonnull (^)(BOOL))elk_setShowsTouchWhenHighlighted
+{
+    return ^(BOOL shows) {
+        [self setShowsTouchWhenHighlighted:shows];
+        return self;
+    };
+}
+
+// these getters only take a single state value
+- (NSString * _Nullable (^)(UIControlState))elk_titleForState
+{
+    return ^(UIControlState state) {
+        return [self titleForState:state];
+    };
+}
+- (UIColor * _Nullable (^)(UIControlState))elk_titleColorForState
+{
+    return ^(UIControlState state) {
+        return [self titleColorForState:state];
+    };
+}
+- (UIColor * _Nullable (^)(UIControlState))elk_titleShadowColorForState
+{
+    return ^(UIControlState state) {
+        return [self titleShadowColorForState:state];
+    };
+}
+- (UIImage * _Nullable (^)(UIControlState))elk_imageForState
+{
+    return ^(UIControlState state) {
+        return [self imageForState:state];
+    };
+}
+- (UIImage * _Nullable (^)(UIControlState))elk_backgroundImageForState
+{
+    return ^(UIControlState state) {
+        return [self backgroundImageForState:state];
+    };
+}
+- (NSAttributedString * _Nullable (^)(UIControlState))elk_attributedTitleForState
+{
+    return ^(UIControlState state) {
+        return [self attributedTitleForState:state];
+    };
+}
+
+
+// these return the rectangle for the background (assumes bounds), the content (image + title) and for the image and title separately. the content rect is calculated based
+// on the title and image size and padding and then adjusted based on the control content alignment. there are no draw methods since the contents
+// are rendered in separate subviews (UIImageView, UILabel)
+- (CGRect (^)(CGRect))elk_backgroundRectForBounds
+{
+    return ^(CGRect bounds) {
+        return [self backgroundRectForBounds:bounds];
+    };
+}
+- (CGRect (^)(CGRect))elk_contentRectForBounds
+{
+    return ^(CGRect bounds) {
+        return [self contentRectForBounds:bounds];
+    };
+}
+- (CGRect (^)(CGRect))elk_titleRectForContentRect
+{
+    return ^(CGRect contentRect) {
+        return [self titleRectForContentRect:contentRect];
+    };
+}
+- (CGRect (^)(CGRect))elk_imageRectForContentRect
+{
+    return ^(CGRect contentRect) {
+        return [self imageRectForContentRect:contentRect];
+    };
+}
+
+
+
 
 
 #pragma mark - add target
@@ -448,62 +713,90 @@
     return ^(UIControlEvents event, ELKControlEventBlock _Nonnull block) {
         switch (event) {
             case UIControlEventTouchDown:
+            {
                 [self addTarget:self action:@selector(elk_touchDownAction:) forControlEvents:UIControlEventTouchDown];
                 self.elk_touchDownBlock = block;
                 break;
+            }
             case UIControlEventTouchDownRepeat:
+            {
                 [self addTarget:self action:@selector(elk_touchDownRepeatAction:) forControlEvents:UIControlEventTouchDownRepeat];
                 self.elk_touchDownRepeatBlock = block;
                 break;
+            }
             case UIControlEventTouchDragInside:
+            {
                 [self addTarget:self action:@selector(elk_touchDragInsideAction:) forControlEvents:UIControlEventTouchDragInside];
                 self.elk_touchDragInsideBlock = block;
                 break;
+            }
             case UIControlEventTouchDragOutside:
+            {
                 [self addTarget:self action:@selector(elk_touchDragOutsideAction:) forControlEvents:UIControlEventTouchDragOutside];
                 self.elk_touchDragOutsideBlock = block;
                 break;
+            }
             case UIControlEventTouchDragEnter:
+            {
                 [self addTarget:self action:@selector(elk_touchDragEnterAction:) forControlEvents:UIControlEventTouchDragEnter];
                 self.elk_touchDragEnterBlock = block;
                 break;
+            }
             case UIControlEventTouchDragExit:
+            {
                 [self addTarget:self action:@selector(elk_touchDragExitAction:) forControlEvents:UIControlEventTouchDragExit];
                 self.elk_touchDragExitBlock = block;
                 break;
+            }
             case UIControlEventTouchUpInside:
+            {
                 [self addTarget:self action:@selector(elk_touchUpInsideAction:) forControlEvents:UIControlEventTouchUpInside];
                 self.elk_touchUpInsideBlock = block;
                 break;
+            }
             case UIControlEventTouchUpOutside:
+            {
                 [self addTarget:self action:@selector(elk_touchUpOutsideAction:) forControlEvents:UIControlEventTouchUpOutside];
                 self.elk_touchUpOutsideBlock = block;
                 break;
+            }
             case UIControlEventTouchCancel:
+            {
                 [self addTarget:self action:@selector(elk_touchCancelAction:) forControlEvents:UIControlEventTouchCancel];
                 self.elk_touchCancelBlock = block;
                 break;
+            }
             case UIControlEventPrimaryActionTriggered:
+            {
                 [self addTarget:self action:@selector(elk_primaryActionTriggeredAction:) forControlEvents:UIControlEventPrimaryActionTriggered];
                 self.elk_primaryActionTriggeredBlock = block;
                 break;
+            }
             case UIControlEventAllTouchEvents:
+            {
                 [self addTarget:self action:@selector(elk_allTouchEventsAction:) forControlEvents:UIControlEventAllTouchEvents];
                 self.elk_allTouchEventsBlock = block;
                 break;
+            }
             case UIControlEventApplicationReserved:
+            {
                 [self addTarget:self action:@selector(elk_applicationReservedAction:) forControlEvents:UIControlEventApplicationReserved];
                 self.elk_applicationReservedBlock = block;
                 break;
+            }
             case UIControlEventAllEvents:
+            {
                 [self addTarget:self action:@selector(elk_allEventsAction:) forControlEvents:UIControlEventAllEvents];
                 self.elk_allEventsBlock = block;
                 break;
+            }
                 
             default:
+            {
                 [self addTarget:self action:@selector(elk_touchUpInsideAction:) forControlEvents:UIControlEventTouchUpInside];
                 self.elk_touchUpInsideBlock = block;
                 break;
+            }
         }
         
         return self;

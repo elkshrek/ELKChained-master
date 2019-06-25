@@ -23,16 +23,16 @@
     
     UIButton *btn = [UIButton elk_makeBlock:^(UIButton * _Nonnull make) {
         
-        make.elk_setTitle(@"ddd", ELKCSNormal);
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wenum-conversion"
-//        make.elk_setTitle(@"title", UIControlStateNormal).elk_setTitle(@"lighted", ELKCSHighlighted);
-//#pragma clang diagnostic pop
+        make.elk_setTitle(@"ddd", UIControlStateNormal);
+        
     }];
-    btn.elk_setTitle(@"dis", ELKCSDisabled).elk_setTitle(@"normal", ELKCSNormal).elk_setTitle(@"high", ELKCSHighlighted).elk_setNormalTitle(@"");
+    btn.elk_setTitle(@"dis", UIControlStateDisabled)
+    .elk_setTitleForNormal(@"normal")
+    .elk_setTitleForHighlighted(@"high")
+    .elk_setTitleForSelected(@"select");
     
 //    [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-    btn.elk_setNormalTitle(@"哈哈哈哈");
+    btn.elk_setTitleForNormal(@"哈哈哈哈");
     btn.elk_addTargetBlock(UIControlEventTouchUpOutside, ^(UIButton * _Nonnull sender) {
         NSLog(@"11111 UIControlEventTouchUpOutside");
     }).elk_addTargetBlock(UIControlEventTouchDragEnter, ^(UIButton * _Nonnull sender) {
@@ -46,6 +46,7 @@
     UIImageView *imgView = [[UIImageView alloc] init];
     [imgView setImage:[UIImage imageNamed:@""]];
     
+    [UIFont systemFontOfSize:14];
     
     btn.elk_setFrame(CGRectZero);
     btn.backgroundColor = [UIColor redColor];
@@ -57,13 +58,8 @@
     
     UIButton *bbb = [UIButton elk_make];
     bbb.elk_setFrame(CGRectMake(0.1, 22, 22, 22)).elk_setBackgroundColor([UIColor redColor]);
-    bbb.elk_setImage([UIImage imageNamed:@""], ELKCSNormal);
+    bbb.elk_setImage([UIImage imageNamed:@""], UIControlStateNormal);
     
-//    ELKKKView *kView = ELKKKView.alloc.init;
-//    kView.elk_tttttry.elk_aaaa;
-//    
-//    ELKTTTTView *tView = [ELKTTTTView new];
-//    tView.elk_tttttry.elk_bbbb;
     
     [UILabel elk_makeBlock:^(UILabel * _Nonnull make) {
         make.elk_setText(@"tt")
@@ -79,7 +75,17 @@
     }];
     
     
-    [UICollectionView elk_make].collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionView *collView = [UICollectionView elk_make];
+    UICollectionViewFlowLayout *fLayout = [[UICollectionViewFlowLayout alloc] init];
+    collView.elk_setCollectionViewLayoutCompletion(fLayout, YES, ^(BOOL finished) {
+        // todo
+        NSLog(@"---------");
+    });
+    [collView setCollectionViewLayout:fLayout animated:YES completion:^(BOOL finished) {
+        NSLog(@"---------");
+    }];
+    
+    UIColor
     
 }
 

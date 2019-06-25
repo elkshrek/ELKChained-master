@@ -15,6 +15,8 @@
 		AB0AFBB522A66C1E00903D14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AFBB422A66C1E00903D14 /* main.m */; };
 		AB0AFBBF22A66C1E00903D14 /* ELKChained_masterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AFBBE22A66C1E00903D14 /* ELKChained_masterTests.m */; };
 		AB0AFBCA22A66C1E00903D14 /* ELKChained_masterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AFBC922A66C1E00903D14 /* ELKChained_masterUITests.m */; };
+		AB0D2DB522C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0D2DB422C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m */; };
+		AB0D2DB822C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0D2DB722C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m */; };
 		AB2F686F22B7449B0068ACA6 /* UICollectionView+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F685622B7449A0068ACA6 /* UICollectionView+ELKChainedAlloy.m */; };
 		AB2F687022B7449B0068ACA6 /* UITableView+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F685722B7449A0068ACA6 /* UITableView+ELKChainedAlloy.m */; };
 		AB2F687122B7449B0068ACA6 /* UIScrollView+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F685822B7449A0068ACA6 /* UIScrollView+ELKChainedAlloy.m */; };
@@ -63,6 +65,10 @@
 		AB0AFBC522A66C1E00903D14 /* ELKChained-masterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ELKChained-masterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0AFBC922A66C1E00903D14 /* ELKChained_masterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELKChained_masterUITests.m; sourceTree = "<group>"; };
 		AB0AFBCB22A66C1E00903D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB0D2DB322C2201100AFEAF8 /* UIFont+ELKChainedAlloy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+ELKChainedAlloy.h"; sourceTree = "<group>"; };
+		AB0D2DB422C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ELKChainedAlloy.m"; sourceTree = "<group>"; };
+		AB0D2DB622C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ELKChainedAlloy.h"; sourceTree = "<group>"; };
+		AB0D2DB722C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ELKChainedAlloy.m"; sourceTree = "<group>"; };
 		AB2F685322B7449A0068ACA6 /* UICollectionView+ELKChainedAlloy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+ELKChainedAlloy.h"; sourceTree = "<group>"; };
 		AB2F685422B7449A0068ACA6 /* UIScrollView+ELKChainedAlloy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ELKChainedAlloy.h"; sourceTree = "<group>"; };
 		AB2F685522B7449A0068ACA6 /* UITableView+ELKChainedAlloy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ELKChainedAlloy.h"; sourceTree = "<group>"; };
@@ -166,6 +172,17 @@
 			path = "ELKChained-masterUITests";
 			sourceTree = "<group>";
 		};
+		AB0D2DB222C21FA900AFEAF8 /* Trait */ = {
+			isa = PBXGroup;
+			children = (
+				AB0D2DB622C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.h */,
+				AB0D2DB722C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m */,
+				AB0D2DB322C2201100AFEAF8 /* UIFont+ELKChainedAlloy.h */,
+				AB0D2DB422C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m */,
+			);
+			path = Trait;
+			sourceTree = "<group>";
+		};
 		AB2F685022B7449A0068ACA6 /* ELKChainedAlloy */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +196,7 @@
 		AB2F685122B7449A0068ACA6 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				AB0D2DB222C21FA900AFEAF8 /* Trait */,
 				AB2F686322B7449A0068ACA6 /* Control */,
 				AB2F685222B7449A0068ACA6 /* ScrollView */,
 				AB2F685B22B7449A0068ACA6 /* TextInput */,
@@ -389,9 +407,11 @@
 				AB2F687122B7449B0068ACA6 /* UIScrollView+ELKChainedAlloy.m in Sources */,
 				AB0AFBB522A66C1E00903D14 /* main.m in Sources */,
 				AB2F686F22B7449B0068ACA6 /* UICollectionView+ELKChainedAlloy.m in Sources */,
+				AB0D2DB822C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m in Sources */,
 				AB2F687A22B7449B0068ACA6 /* NSString+ELKChainedAlloy.m in Sources */,
 				AB0AFBA722A66C1D00903D14 /* AppDelegate.m in Sources */,
 				AB2F687522B7449B0068ACA6 /* UITextField+ELKChainedAlloy.m in Sources */,
+				AB0D2DB522C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m in Sources */,
 				AB2F687022B7449B0068ACA6 /* UITableView+ELKChainedAlloy.m in Sources */,
 				AB2F687222B7449B0068ACA6 /* UILabel+ELKChainedAlloy.m in Sources */,
 				AB2F687922B7449B0068ACA6 /* NSObject+ELKChainedAlloy.m in Sources */,
