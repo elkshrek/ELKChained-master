@@ -6,20 +6,4 @@ ELKChainedAlloy链式编程框架
 提供所有系统控件的链式编程方法，提升开发效率
 持续更新中。。。
 
-------
 
-#### UIButton
-
-make  
-setTitle  
-setTitleColor  
-setBackgroundColor  
-setFrame  
-setBackgourndImage  
-setImage  
-addTarget      addTargetBlock  
-
-
-contentEdgeInsets   
-titleEdgeInsets   
-imageEdgeInsets   
