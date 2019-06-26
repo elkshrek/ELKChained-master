@@ -142,10 +142,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy, readonly) NSString * _Nonnull (^elk_stringByAppendingString)(NSString * _Nonnull aString);
 
-/**
- string by appending format
- */
-//@property (nonatomic, copy, readonly) NSString * _Nonnull (^elk_stringByAppendingFormat)(NSString * _Nonnull  str, ...);
 
 /**
  upperace string with locale

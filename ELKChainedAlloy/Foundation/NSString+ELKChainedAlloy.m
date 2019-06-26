@@ -271,27 +271,6 @@
     };
 }
 
-/**
- string by appending format
- */
-//- (NSString * _Nonnull (^)(NSString * _Nonnull, ...))elk_stringByAppendingFormat
-//{
-//    return ^(NSString * _Nonnull  str, ...) {
-//        return [self stringByAppendingFormat:str, ...];
-//    };
-//}
-
-
-
-
-
-//- (NSString * _Nonnull (^)(NSString * _Nonnull, ...))elk_stringByAppendingFormat
-//{
-//    return ^(NSString * _Nonnull format, ...) NS_FORMAT_FUNCTION(1,2) {
-//        return [self stringByAppendingFormat:format, ...];
-//    };
-//}
-
 
 /**
  upperace string with locale
