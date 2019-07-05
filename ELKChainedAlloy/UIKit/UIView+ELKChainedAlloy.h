@@ -173,7 +173,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set Tint color
  */
-@property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setTintColor)(UIColor * _Nonnull tColor);
+@property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setTintColor)(UIColor * _Nonnull tColor) NS_AVAILABLE_IOS(7_0);
 
 
 

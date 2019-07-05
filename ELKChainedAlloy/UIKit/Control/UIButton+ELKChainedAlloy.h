@@ -133,7 +133,7 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 /**
  set button title color for UIControlStateFocused
  */
-@property (nonatomic, strong, readonly) UIButton * _Nonnull(^elk_setTitleColorForFocused)(UIColor * _Nonnull color);
+@property (nonatomic, strong, readonly) UIButton * _Nonnull(^elk_setTitleColorForFocused)(UIColor * _Nonnull color) NS_AVAILABLE_IOS(9_0);
 
 
 // default is nil. use 50% black

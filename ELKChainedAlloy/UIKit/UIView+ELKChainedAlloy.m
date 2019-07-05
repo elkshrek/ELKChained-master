@@ -531,7 +531,7 @@
 /**
  set Tint color
  */
-- (UIView * _Nonnull (^)(UIColor * _Nonnull))elk_setTintColor
+- (UIView * _Nonnull (^)(UIColor * _Nonnull))elk_setTintColor NS_AVAILABLE_IOS(7_0)
 {
     return ^(UIColor * _Nonnull tColor) {
         [self setTintColor:tColor];

@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set attribute text
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nullable attrText);
+@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nullable attrText) NS_AVAILABLE_IOS(6_0);
 
 /**
  set text color
@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set text alignment
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setTextAlignment)(NSTextAlignment tAlignment);
+@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setTextAlignment)(NSTextAlignment tAlignment) NS_AVAILABLE_IOS(6_0);
 
 /**
  set <UITextViewDelegate>delegate
@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set select able
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setSelectAble)(BOOL able);
+@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setSelectAble)(BOOL able) NS_AVAILABLE_IOS(7_0);
 
 /**
  set data detector types
@@ -109,7 +109,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set text container inset
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setTextContainerInset)(UIEdgeInsets inset);
+@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setTextContainerInset)(UIEdgeInsets inset) NS_AVAILABLE_IOS(7_0);
 
 /**
  set link text attribute

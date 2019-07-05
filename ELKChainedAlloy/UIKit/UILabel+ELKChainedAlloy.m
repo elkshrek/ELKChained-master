@@ -53,7 +53,7 @@
 /**
  set attribute text
  */
-- (UILabel * _Nonnull (^)(NSAttributedString * _Nonnull))elk_setAttributeText
+- (UILabel * _Nonnull (^)(NSAttributedString * _Nonnull))elk_setAttributeText NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSAttributedString * _Nonnull attrText) {
         [self setAttributedText:attrText];
@@ -65,7 +65,7 @@
 /**
  set text alignment
  */
-- (UILabel * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment
+- (UILabel * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSTextAlignment textAlign) {
         [self setTextAlignment:textAlign];
@@ -177,7 +177,7 @@
 /**
  set line break mode
  */
-- (UILabel * _Nonnull (^)(NSLineBreakMode))elk_setLineBreakMode
+- (UILabel * _Nonnull (^)(NSLineBreakMode))elk_setLineBreakMode NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSLineBreakMode lbMode) {
         [self setLineBreakMode:lbMode];

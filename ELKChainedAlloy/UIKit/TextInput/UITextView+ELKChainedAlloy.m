@@ -52,7 +52,7 @@
 /**
  set attribute text
  */
-- (UITextView * _Nonnull (^)(NSAttributedString * _Nullable))elk_setAttributeText
+- (UITextView * _Nonnull (^)(NSAttributedString * _Nullable))elk_setAttributeText NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSAttributedString * _Nullable attrText) {
         [self setAttributedText:attrText];
@@ -107,7 +107,7 @@
 /**
  set text alignment
  */
-- (UITextView * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment
+- (UITextView * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSTextAlignment tAlignment) {
         [self setTextAlignment:tAlignment];
@@ -184,7 +184,7 @@
 /**
  set select able
  */
-- (UITextView * _Nonnull (^)(BOOL))elk_setSelectAble
+- (UITextView * _Nonnull (^)(BOOL))elk_setSelectAble NS_AVAILABLE_IOS(7_0)
 {
     return ^(BOOL able) {
         [self setSelectable:able];
@@ -206,7 +206,7 @@
 /**
  set text container inset
  */
-- (UITextView * _Nonnull (^)(UIEdgeInsets))elk_setTextContainerInset
+- (UITextView * _Nonnull (^)(UIEdgeInsets))elk_setTextContainerInset NS_AVAILABLE_IOS(7_0)
 {
     return ^(UIEdgeInsets inset) {
         [self setTextContainerInset:inset];

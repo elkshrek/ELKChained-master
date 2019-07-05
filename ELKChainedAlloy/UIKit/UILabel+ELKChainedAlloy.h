@@ -37,13 +37,13 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set attribute text
  */
-@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nonnull attrText);
+@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nonnull attrText) NS_AVAILABLE_IOS(6_0);
 
 
 /**
  set text alignment
  */
-@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setTextAlignment)(NSTextAlignment textAlign);
+@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setTextAlignment)(NSTextAlignment textAlign) NS_AVAILABLE_IOS(6_0);
 
 /**
  set text color
@@ -96,7 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set line break mode
  */
-@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setLineBreakMode)(NSLineBreakMode lbMode);
+@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setLineBreakMode)(NSLineBreakMode lbMode) NS_AVAILABLE_IOS(6_0);
 
 /**
  set number of lines

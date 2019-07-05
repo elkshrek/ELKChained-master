@@ -63,7 +63,7 @@
 /**
  set attribute text
  */
-- (UITextField * _Nonnull (^)(NSAttributedString * _Nonnull))elk_setAttributeText
+- (UITextField * _Nonnull (^)(NSAttributedString * _Nonnull))elk_setAttributeText NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSAttributedString * _Nonnull attrText) {
         [self setAttributedText:attrText];
@@ -129,7 +129,7 @@
 /**
  set text alignment
  */
-- (UITextField * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment
+- (UITextField * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSTextAlignment textAlign) {
         [self setTextAlignment:textAlign];

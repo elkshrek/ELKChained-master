@@ -286,7 +286,7 @@
 /**
  set button title color for UIControlStateFocused
  */
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTitleColorForFocused
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))elk_setTitleColorForFocused NS_AVAILABLE_IOS(9_0)
 {
     return ^(UIColor * _Nonnull color) {
         [self setTitleColor:color forState:UIControlStateFocused];
