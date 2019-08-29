@@ -21,12 +21,12 @@ Pod::Spec.new do |s|
 # s.source_files   = "ELKChainedAlloy", "ELKChainedAlloy/**/*.{h,m}"
 
     s.subspec 'Foundation' do |ss|
-        ss.source_files = 'ELKChainedAlloy/Foundation/*.{h,m}'
+        ss.source_files = 'ELKChainedAlloy/Foundation/**/*.{h,m}'
         ss.ios.frameworks = 'Foundation', 'UIKit'
     end
 
     s.subspec 'UIKit' do |ss|
-        ss.source_files = 'ELKChainedAlloy/UIKit/*.{h,m}'
+        ss.source_files = 'ELKChainedAlloy/UIKit/**/*.{h,m}'
         ss.ios.frameworks = 'Foundation', 'UIKit'
     end
 
