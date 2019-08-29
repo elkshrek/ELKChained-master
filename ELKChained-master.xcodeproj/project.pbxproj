@@ -146,10 +146,9 @@
 			children = (
 				AB0AFBA522A66C1D00903D14 /* AppDelegate.h */,
 				AB0AFBA622A66C1D00903D14 /* AppDelegate.m */,
+				AB322F222318199700FC393E /* ELKChained-Example */,
 				AB2F685022B7449A0068ACA6 /* ELKChainedAlloy */,
 				AB5FD8B522A78F5200BD8A3E /* Supports */,
-				AB0AFBA822A66C1D00903D14 /* ViewController.h */,
-				AB0AFBA922A66C1D00903D14 /* ViewController.m */,
 			);
 			path = "ELKChained-master";
 			sourceTree = "<group>";
@@ -254,6 +253,15 @@
 				AB2F686D22B7449A0068ACA6 /* NSString+ELKChainedAlloy.m */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		AB322F222318199700FC393E /* ELKChained-Example */ = {
+			isa = PBXGroup;
+			children = (
+				AB0AFBA822A66C1D00903D14 /* ViewController.h */,
+				AB0AFBA922A66C1D00903D14 /* ViewController.m */,
+			);
+			path = "ELKChained-Example";
 			sourceTree = "<group>";
 		};
 		AB5FD8B522A78F5200BD8A3E /* Supports */ = {

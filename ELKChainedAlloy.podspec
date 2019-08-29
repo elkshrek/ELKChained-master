@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
     s.name           = "ELKChainedAlloy"
 
-    s.version        = "1.0.1"
+    s.version        = "1.0.2"
 
     s.summary        = "基于OC的简单易用的链式编程框架，通过 . 调用方法，实现快速编程"
     s.description    = <<-DESC
@@ -18,10 +18,24 @@ Pod::Spec.new do |s|
     s.platform       = :ios
     s.source         = { :git => "https://github.com/CircusJonathan/ELKChained-master.git", :tag => "#{s.version}" }
 
-    s.source_files   = "ELKChainedAlloy", "ELKChainedAlloy/**/*.{h,m}"
+# s.source_files   = "ELKChainedAlloy", "ELKChainedAlloy/**/*.{h,m}"
+
+    s.subspec 'Foundation' do |ss|
+        ss.source_files = 'ELKChainedAlloy/Foundation/*.{h,m}'
+        ss.ios.frameworks = 'Foundation', 'UIKit'
+    end
+
+    s.subspec 'UIKit' do |ss|
+        ss.source_files = 'ELKChainedAlloy/UIKit/*.{h,m}'
+        ss.ios.frameworks = 'Foundation', 'UIKit'
+    end
+
     s.exclude_files  = "ELKChainedAlloy/Exclude"
+    s.public_header_files = 'ELKChainedAlloy/ELKChainedAlloy.h'
+    s.source_files   = 'ELKChainedAlloy/ELKChainedAlloy.h'
+
     s.requires_arc   = true
-    s.ios.frameworks = 'Foundation', 'UIKit'
+#s.ios.frameworks = 'Foundation', 'UIKit'
 
 
 
