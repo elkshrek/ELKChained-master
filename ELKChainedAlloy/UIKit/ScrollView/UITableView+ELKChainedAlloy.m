@@ -275,7 +275,7 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
 /**
  dequeue Reusable Cell With Identifier
  */
-- (UITableViewCell * _Nonnull (^)(NSString * _Nonnull))elk_dequeueReusableCell
+- (__kindof UITableViewCell * _Nonnull (^)(NSString * _Nonnull))elk_dequeueReusableCell
 {
     return ^(NSString * _Nonnull identifier) {
         UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:identifier];
@@ -286,7 +286,7 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
 /**
  dequeue Reusable Cell With Identifier For IndexPath
  */
-- (UITableViewCell * _Nonnull (^)(NSString * _Nonnull, NSIndexPath * _Nonnull))elk_dequeueReusableCellForIndexPath
+- (__kindof UITableViewCell * _Nonnull (^)(NSString * _Nonnull, NSIndexPath * _Nonnull))elk_dequeueReusableCellForIndexPath
 {
     return ^(NSString * _Nonnull identifier, NSIndexPath *_Nonnull indexPath) {
         UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
@@ -319,7 +319,7 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
 /**
  like dequeueReusableCellWithIdentifier:, but for headers/footers
  */
-- (UITableViewHeaderFooterView * _Nonnull (^)(NSString * _Nonnull))elk_dequeueReusableHeaderFooterView NS_AVAILABLE_IOS(6_0)
+- (__kindof UITableViewHeaderFooterView * _Nonnull (^)(NSString * _Nonnull))elk_dequeueReusableHeaderFooterView NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSString *identifier) {
         UITableViewHeaderFooterView *headerFooterView = [self dequeueReusableHeaderFooterViewWithIdentifier:identifier];

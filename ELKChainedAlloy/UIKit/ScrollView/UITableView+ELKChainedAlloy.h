@@ -149,12 +149,12 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
 /**
  dequeue Reusable Cell With Identifier
  */
-@property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_dequeueReusableCell)(NSString * _Nonnull identifier);
+@property (nonatomic, copy, readonly) __kindof UITableViewCell * _Nonnull (^elk_dequeueReusableCell)(NSString * _Nonnull identifier);
 
 /**
  dequeue Reusable Cell With Identifier For IndexPath
  */
-@property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_dequeueReusableCellForIndexPath)(NSString * _Nonnull identifier, NSIndexPath *_Nonnull indexPath);
+@property (nonatomic, copy, readonly) __kindof UITableViewCell * _Nonnull (^elk_dequeueReusableCellForIndexPath)(NSString * _Nonnull identifier, NSIndexPath *_Nonnull indexPath);
 
 /**
  register nib for header footer view reuse identifier
@@ -169,7 +169,7 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
 /**
  like dequeueReusableCellWithIdentifier:, but for headers/footers
  */
-@property (nonatomic, copy, readonly) UITableViewHeaderFooterView * _Nonnull (^elk_dequeueReusableHeaderFooterView)(NSString *identifier) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) __kindof UITableViewHeaderFooterView * _Nonnull (^elk_dequeueReusableHeaderFooterView)(NSString *identifier) NS_AVAILABLE_IOS(6_0);
 
 /**
  set background view
