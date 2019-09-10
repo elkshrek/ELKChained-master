@@ -20,7 +20,9 @@
 
 #import "UIScrollView+ELKChainedAlloy.h"
 #import "UITableView+ELKChainedAlloy.h"
+#import "UITableViewCell+ELKChainedAlloy.h"
 #import "UICollectionView+ELKChainedAlloy.h"
+#import "UICollectionViewFlowLayout+ELKChainedAlloy.h"
 
 #import "UITextField+ELKChainedAlloy.h"
 #import "UITextView+ELKChainedAlloy.h"
@@ -31,6 +33,11 @@
 
 #import "NSObject+ELKChainedAlloy.h"
 #import "NSString+ELKChainedAlloy.h"
+
+
+
+#import "UIFont+ELKChainedAlloy.h"
+#import "UIColor+ELKChainedAlloy.h"
 
 
 

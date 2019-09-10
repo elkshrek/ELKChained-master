@@ -17,6 +17,8 @@
 		AB0AFBCA22A66C1E00903D14 /* ELKChained_masterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AFBC922A66C1E00903D14 /* ELKChained_masterUITests.m */; };
 		AB0D2DB522C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0D2DB422C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m */; };
 		AB0D2DB822C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0D2DB722C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m */; };
+		AB25EB902327331E007D606D /* UITableViewCell+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EB8F2327331E007D606D /* UITableViewCell+ELKChainedAlloy.m */; };
+		AB25EB96232744AD007D606D /* UICollectionViewFlowLayout+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EB95232744AD007D606D /* UICollectionViewFlowLayout+ELKChainedAlloy.m */; };
 		AB2F686F22B7449B0068ACA6 /* UICollectionView+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F685622B7449A0068ACA6 /* UICollectionView+ELKChainedAlloy.m */; };
 		AB2F687022B7449B0068ACA6 /* UITableView+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F685722B7449A0068ACA6 /* UITableView+ELKChainedAlloy.m */; };
 		AB2F687122B7449B0068ACA6 /* UIScrollView+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F685822B7449A0068ACA6 /* UIScrollView+ELKChainedAlloy.m */; };
@@ -69,6 +71,10 @@
 		AB0D2DB422C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ELKChainedAlloy.m"; sourceTree = "<group>"; };
 		AB0D2DB622C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ELKChainedAlloy.h"; sourceTree = "<group>"; };
 		AB0D2DB722C2201F00AFEAF8 /* UIColor+ELKChainedAlloy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ELKChainedAlloy.m"; sourceTree = "<group>"; };
+		AB25EB8E2327331E007D606D /* UITableViewCell+ELKChainedAlloy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ELKChainedAlloy.h"; sourceTree = "<group>"; };
+		AB25EB8F2327331E007D606D /* UITableViewCell+ELKChainedAlloy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ELKChainedAlloy.m"; sourceTree = "<group>"; };
+		AB25EB94232744AD007D606D /* UICollectionViewFlowLayout+ELKChainedAlloy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewFlowLayout+ELKChainedAlloy.h"; sourceTree = "<group>"; };
+		AB25EB95232744AD007D606D /* UICollectionViewFlowLayout+ELKChainedAlloy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewFlowLayout+ELKChainedAlloy.m"; sourceTree = "<group>"; };
 		AB2F685322B7449A0068ACA6 /* UICollectionView+ELKChainedAlloy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+ELKChainedAlloy.h"; sourceTree = "<group>"; };
 		AB2F685422B7449A0068ACA6 /* UIScrollView+ELKChainedAlloy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ELKChainedAlloy.h"; sourceTree = "<group>"; };
 		AB2F685522B7449A0068ACA6 /* UITableView+ELKChainedAlloy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ELKChainedAlloy.h"; sourceTree = "<group>"; };
@@ -214,10 +220,14 @@
 			children = (
 				AB2F685322B7449A0068ACA6 /* UICollectionView+ELKChainedAlloy.h */,
 				AB2F685622B7449A0068ACA6 /* UICollectionView+ELKChainedAlloy.m */,
+				AB25EB94232744AD007D606D /* UICollectionViewFlowLayout+ELKChainedAlloy.h */,
+				AB25EB95232744AD007D606D /* UICollectionViewFlowLayout+ELKChainedAlloy.m */,
 				AB2F685422B7449A0068ACA6 /* UIScrollView+ELKChainedAlloy.h */,
 				AB2F685822B7449A0068ACA6 /* UIScrollView+ELKChainedAlloy.m */,
 				AB2F685522B7449A0068ACA6 /* UITableView+ELKChainedAlloy.h */,
 				AB2F685722B7449A0068ACA6 /* UITableView+ELKChainedAlloy.m */,
+				AB25EB8E2327331E007D606D /* UITableViewCell+ELKChainedAlloy.h */,
+				AB25EB8F2327331E007D606D /* UITableViewCell+ELKChainedAlloy.m */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -419,10 +429,12 @@
 				AB2F687A22B7449B0068ACA6 /* NSString+ELKChainedAlloy.m in Sources */,
 				AB0AFBA722A66C1D00903D14 /* AppDelegate.m in Sources */,
 				AB2F687522B7449B0068ACA6 /* UITextField+ELKChainedAlloy.m in Sources */,
+				AB25EB96232744AD007D606D /* UICollectionViewFlowLayout+ELKChainedAlloy.m in Sources */,
 				AB0D2DB522C2201100AFEAF8 /* UIFont+ELKChainedAlloy.m in Sources */,
 				AB2F687022B7449B0068ACA6 /* UITableView+ELKChainedAlloy.m in Sources */,
 				AB2F687222B7449B0068ACA6 /* UILabel+ELKChainedAlloy.m in Sources */,
 				AB2F687922B7449B0068ACA6 /* NSObject+ELKChainedAlloy.m in Sources */,
+				AB25EB902327331E007D606D /* UITableViewCell+ELKChainedAlloy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

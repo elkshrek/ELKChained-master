@@ -67,6 +67,34 @@
 }
 
 
+/**
+ Make A UITableView, return a new object
+ 
+ @param style UITableViewStyle
+ @return Object Of UITableView
+ */
+UITableView * _Nonnull ELK_makeTableView(UITableViewStyle style)
+{
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
+    return tableView;
+}
+
+/**
+ Make A UITableView, return a new object
+ 
+ @param style UITableViewStyle
+ @param block block
+ @return Object Of UITableView
+ */
+UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableViewMakeBlock _Nullable block)
+{
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
+    if (block) {
+        block(tableView);
+    }
+    return tableView;
+}
+
 
 /**
  set dataSource
@@ -227,8 +255,8 @@
  */
 - (UITableView * _Nonnull (^)(Class  _Nonnull __unsafe_unretained, NSString * _Nonnull))elk_registerClassForCell
 {
-    return ^(Class cellClass, NSString * _Nonnull identify) {
-        [self registerClass:cellClass forCellReuseIdentifier:identify];
+    return ^(Class cellClass, NSString * _Nonnull identifier) {
+        [self registerClass:cellClass forCellReuseIdentifier:identifier];
         return self;
     };
 }
@@ -238,9 +266,31 @@
  */
 - (UITableView * _Nonnull (^)(UINib * _Nonnull, NSString * _Nonnull))elk_registerNibForCell
 {
-    return ^(UINib * _Nonnull nib, NSString * _Nonnull identify) {
-        [self registerNib:nib forCellReuseIdentifier:identify];
+    return ^(UINib * _Nonnull nib, NSString * _Nonnull identifier) {
+        [self registerNib:nib forCellReuseIdentifier:identifier];
         return self;
+    };
+}
+
+/**
+ dequeue Reusable Cell With Identifier
+ */
+- (UITableViewCell * _Nonnull (^)(NSString * _Nonnull))elk_dequeueReusableCell
+{
+    return ^(NSString * _Nonnull identifier) {
+        UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:identifier];
+        return cell;
+    };
+}
+
+/**
+ dequeue Reusable Cell With Identifier For IndexPath
+ */
+- (UITableViewCell * _Nonnull (^)(NSString * _Nonnull, NSIndexPath * _Nonnull))elk_dequeueReusableCellForIndexPath
+{
+    return ^(NSString * _Nonnull identifier, NSIndexPath *_Nonnull indexPath) {
+        UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+        return cell;
     };
 }
 
@@ -249,8 +299,8 @@
  */
 - (UITableView * _Nonnull (^)(UINib * _Nonnull, NSString * _Nonnull))elk_registerNibForHeadFootView
 {
-    return ^(UINib * _Nonnull nib, NSString * _Nonnull identify) {
-        [self registerNib:nib forHeaderFooterViewReuseIdentifier:identify];
+    return ^(UINib * _Nonnull nib, NSString * _Nonnull identifier) {
+        [self registerNib:nib forHeaderFooterViewReuseIdentifier:identifier];
         return self;
     };
 }
@@ -260,9 +310,20 @@
  */
 - (UITableView * _Nonnull (^)(Class  _Nonnull __unsafe_unretained, NSString * _Nonnull))elk_registerClassForHeadFootView
 {
-    return ^(Class hfClass, NSString * _Nonnull identify) {
-        [self registerClass:hfClass forHeaderFooterViewReuseIdentifier:identify];
+    return ^(Class hfClass, NSString * _Nonnull identifier) {
+        [self registerClass:hfClass forHeaderFooterViewReuseIdentifier:identifier];
         return self;
+    };
+}
+
+/**
+ like dequeueReusableCellWithIdentifier:, but for headers/footers
+ */
+- (UITableViewHeaderFooterView * _Nonnull (^)(NSString * _Nonnull))elk_dequeueReusableHeaderFooterView NS_AVAILABLE_IOS(6_0)
+{
+    return ^(NSString *identifier) {
+        UITableViewHeaderFooterView *headerFooterView = [self dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+        return headerFooterView;
     };
 }
 

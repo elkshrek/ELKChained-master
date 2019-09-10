@@ -11,6 +11,15 @@
 @implementation NSString (ELKChainedAlloy)
 
 
+//- (NSString * _Nonnull (^)(NSString * _Nonnull, int))elk_stringByAppendingFormat
+//{
+//    return ^(NSString * formatt, __attribute__((format(__NSString__, 1, 2))) moreParams) {
+//        return [self stringByAppendingFormat:formatt, moreParams];
+//    };
+//}
+
+
+
 /**
  compare
  */
@@ -283,6 +292,26 @@
 }
 
 /**
+ lowercase String With Locale
+ */
+- (NSString * _Nonnull (^)(NSLocale * _Nullable))elk_lowercaseStringWithLocale
+{
+    return ^(NSLocale * _Nullable locale) {
+        return [self lowercaseStringWithLocale:locale];
+    };
+}
+
+/**
+ capitalized String With Locale
+ */
+- (NSString * _Nonnull (^)(NSLocale * _Nullable))elk_capitalizedStringWithLocale
+{
+    return ^(NSLocale * _Nullable locale) {
+        return [self capitalizedStringWithLocale:locale];
+    };
+}
+
+/**
  substring from index
  */
 - (NSString * _Nonnull (^)(NSUInteger))elk_substringFromIndex
@@ -311,6 +340,49 @@
         return [self substringWithRange:range];
     };
 }
+
+
+#pragma mark *** Finding lines, sentences, words, etc ***
+
+/**
+ Line Range For Range
+ */
+- (NSRange (^)(NSRange))elk_lineRangeForRange
+{
+    return ^(NSRange range) {
+        return [self lineRangeForRange:range];
+    };
+}
+
+/**
+ Paragraph Range For Range
+ */
+- (NSRange (^)(NSRange))elk_paragraphRangeForRange
+{
+    return ^(NSRange range) {
+        return [self paragraphRangeForRange:range];
+    };
+}
+
+/**
+ In the enumerate methods, the blocks will be invoked inside an autorelease pool, so any values assigned inside the block should be retained.
+ */
+- (void (^)(NSRange, NSStringEnumerationOptions, ELKEnumSubStringBlock _Nonnull))elk_enumerateSubstrInRangeOptions API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0))
+{
+    return ^(NSRange range, NSStringEnumerationOptions opts, ELKEnumSubStringBlock usingBlock) {
+        [self enumerateSubstringsInRange:range options:opts usingBlock:usingBlock];
+    };
+}
+- (void (^)(ELKEnumerateLinesBlock _Nonnull))elk_enumerateLinesUsingBlock
+{
+    return ^(ELKEnumerateLinesBlock usingBlock) {
+        [self enumerateLinesUsingBlock:usingBlock];
+    };
+}
+
+
+
+
 
 
 @end

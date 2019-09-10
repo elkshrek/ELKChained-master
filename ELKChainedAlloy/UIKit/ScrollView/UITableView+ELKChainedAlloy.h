@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^ELKTableViewMakeBlock)(UITableView * _Nonnull make);
+
 @interface UITableView (ELKChainedAlloy)
 
 
@@ -46,9 +48,22 @@ NS_ASSUME_NONNULL_BEGIN
 + (UITableView * _Nonnull)elk_makeStyle:(UITableViewStyle)style block:(void (^ _Nullable)(UITableView * _Nonnull make))block;
 
 
+/**
+ Make A UITableView, return a new object
 
+ @param style UITableViewStyle
+ @return Object Of UITableView
+ */
+UITableView * _Nonnull ELK_makeTableView(UITableViewStyle style);
 
+/**
+ Make A UITableView, return a new object
 
+ @param style UITableViewStyle
+ @param block block
+ @return Object Of UITableView
+ */
+UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableViewMakeBlock _Nullable block);
 
 
 /**
@@ -124,22 +139,37 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  register class for cell reuse identifier
  */
-@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerClassForCell)(Class cellClass, NSString * _Nonnull identify);
+@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerClassForCell)(Class cellClass, NSString * _Nonnull identifier);
 
 /**
  register nib for cell reuse identifier
  */
-@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerNibForCell)(UINib * _Nonnull nib, NSString * _Nonnull identify);
+@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerNibForCell)(UINib * _Nonnull nib, NSString * _Nonnull identifier);
+
+/**
+ dequeue Reusable Cell With Identifier
+ */
+@property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_dequeueReusableCell)(NSString * _Nonnull identifier);
+
+/**
+ dequeue Reusable Cell With Identifier For IndexPath
+ */
+@property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_dequeueReusableCellForIndexPath)(NSString * _Nonnull identifier, NSIndexPath *_Nonnull indexPath);
 
 /**
  register nib for header footer view reuse identifier
  */
-@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerNibForHeadFootView)(UINib * _Nonnull nib, NSString * _Nonnull identify);
+@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerNibForHeadFootView)(UINib * _Nonnull nib, NSString * _Nonnull identifier);
 
 /**
  register class for header footer view reuse identifier
  */
-@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerClassForHeadFootView)(Class hfClass, NSString * _Nonnull identify);
+@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_registerClassForHeadFootView)(Class hfClass, NSString * _Nonnull identifier);
+
+/**
+ like dequeueReusableCellWithIdentifier:, but for headers/footers
+ */
+@property (nonatomic, copy, readonly) UITableViewHeaderFooterView * _Nonnull (^elk_dequeueReusableHeaderFooterView)(NSString *identifier) NS_AVAILABLE_IOS(6_0);
 
 /**
  set background view

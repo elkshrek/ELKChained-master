@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^ELKCollCompletionBlock)(BOOL finished);
-typedef void (^ELKBatchUpdatesBlock)(void);
+typedef void(^ELKBatchUpdatesBlock)(void);
+typedef void(^ELKCollectionViewMakeBlock)(UICollectionView * _Nonnull make);
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -48,6 +49,23 @@ NS_ASSUME_NONNULL_BEGIN
  @return return a new UICollectionView
  */
 + (UICollectionView * _Nonnull)elk_makeViewLayout:(UICollectionViewLayout * _Nonnull)layout block:(void (^ _Nullable)(UICollectionView * _Nonnull make))block;
+
+/**
+ Make A UICollectionView, return a new object
+
+ @param layout UICollectionViewLayout
+ @return Object Of UICollectionView
+ */
+UICollectionView * _Nonnull ELK_makeCollectionView(UICollectionViewLayout *_Nonnull layout);
+
+/**
+ Make A UICollectionView, return a new object
+
+ @param layout UICollectionViewLayout
+ @param block  block
+ @return Object Of UICollectionView
+ */
+UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *_Nonnull layout, ELKCollectionViewMakeBlock _Nullable block);
 
 
 

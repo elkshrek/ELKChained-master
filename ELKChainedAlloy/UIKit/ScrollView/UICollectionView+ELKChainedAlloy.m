@@ -67,6 +67,37 @@
     return make;
 }
 
+
+/**
+ Make A UICollectionView, return a new object
+ 
+ @param layout UICollectionViewLayout
+ @return Object Of UICollectionView
+ */
+UICollectionView * _Nonnull ELK_makeCollectionView(UICollectionViewLayout *_Nonnull layout)
+{
+    UICollectionView *make = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    return make;
+}
+
+/**
+ Make A UICollectionView, return a new object
+ 
+ @param layout UICollectionViewLayout
+ @param block  block
+ @return Object Of UICollectionView
+ */
+UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *_Nonnull layout, ELKCollectionViewMakeBlock _Nullable block)
+{
+    UICollectionView *make = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    if (block) {
+        block(make);
+    }
+    return make;
+}
+
+
+
 /**
  set delegate
  */
