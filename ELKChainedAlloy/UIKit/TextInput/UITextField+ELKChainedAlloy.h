@@ -80,6 +80,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setBorderStyle)(UITextBorderStyle bStyle);
 
+/// set Keyboard Type
+@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setKeyboardType)(UIKeyboardType keyboardType);
+
+/// set keyboard appearance
+@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setKeyboardAppearance)(UIKeyboardAppearance kbAppearance);
+
+/// set ReturnKey type
+@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setReturnKeyType)(UIReturnKeyType returnKeyType);
+
+/// set SecureTextEntry
+@property (nonatomic, copy, readonly) UITextField * _Nonnull (^elk_setSecureTextEntry)(BOOL secure);
+
 /**
  set clears on begin editing
  */

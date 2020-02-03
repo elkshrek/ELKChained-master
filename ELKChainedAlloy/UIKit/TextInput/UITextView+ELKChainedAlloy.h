@@ -60,6 +60,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setBoldFont)(CGFloat fontSize);
 
+/// set Keyboard Type
+@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setKeyboardType)(UIKeyboardType keyboardType);
+
+/// set keyboard appearance
+@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setKeyboardAppearance)(UIKeyboardAppearance kbAppearance);
+
+/// set ReturnKey type
+@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setReturnKeyType)(UIReturnKeyType returnKeyType);
+
+/// set SecureTextEntry
+@property (nonatomic, copy, readonly) UITextView * _Nonnull (^elk_setSecureTextEntry)(BOOL secure);
+
 /**
  set text alignment
  */

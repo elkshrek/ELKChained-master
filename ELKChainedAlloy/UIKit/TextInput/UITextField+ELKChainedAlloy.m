@@ -148,6 +148,42 @@
     };
 }
 
+/// set Keyboard Type
+- (UITextField * _Nonnull (^)(UIKeyboardType))elk_setKeyboardType
+{
+    return ^(UIKeyboardType keyboardType) {
+        [self setKeyboardType:keyboardType];
+        return self;
+    };
+}
+
+/// set keyboard appearance
+- (UITextField * _Nonnull (^)(UIKeyboardAppearance))elk_setKeyboardAppearance
+{
+    return ^(UIKeyboardAppearance kbAppearance) {
+        self.keyboardAppearance = kbAppearance;
+        return self;
+    };
+}
+
+/// set ReturnKey type
+- (UITextField * _Nonnull (^)(UIReturnKeyType))elk_setReturnKeyType
+{
+    return ^(UIReturnKeyType returnKeyType) {
+        self.returnKeyType = returnKeyType;
+        return self;
+    };
+}
+
+/// set SecureTextEntry
+- (UITextField * _Nonnull (^)(BOOL))elk_setSecureTextEntry
+{
+    return ^(BOOL secure) {
+        self.secureTextEntry = secure;
+        return self;
+    };
+}
+
 /**
  set clears on begin editing
  */
