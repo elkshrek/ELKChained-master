@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ELKChainedAlloy.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()
 
 @property (nonatomic, strong) UILabel *dLabel;
 
