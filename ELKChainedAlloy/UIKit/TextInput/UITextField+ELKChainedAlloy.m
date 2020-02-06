@@ -75,6 +75,7 @@
  set attribute placeholder
  */
 - (UITextField * _Nonnull (^)(NSAttributedString * _Nonnull))elk_setAttrPlaceholder
+NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSAttributedString * _Nonnull attrPlaceholder) {
         [self setAttributedPlaceholder:attrPlaceholder];
@@ -254,6 +255,7 @@
  set allows editing text attributes
  */
 - (UITextField * _Nonnull (^)(BOOL))elk_setAllowEditTextAttribute
+NS_AVAILABLE_IOS(6_0)
 {
     return ^(BOOL allow) {
         [self setAllowsEditingTextAttributes:allow];

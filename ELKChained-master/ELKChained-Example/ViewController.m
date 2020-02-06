@@ -58,15 +58,7 @@
     });
     
     
-    
-    UITableView *tableView = ELK_makeTableView(UITableViewStylePlain);
-    tableView.elk_setDataSource(self)
-    .elk_setDelegate(self);
-    
-    self.view.elk_addSubview(tableView);
-    
-    
-    
+      
     
     
     

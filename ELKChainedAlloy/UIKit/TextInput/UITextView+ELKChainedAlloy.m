@@ -166,6 +166,7 @@
  set allows editing text attributes
  */
 - (UITextView * _Nonnull (^)(BOOL))elk_setAllowEditTextAttribute
+NS_AVAILABLE_IOS(6_0)
 {
     return ^(BOOL allow) {
         [self setAllowsEditingTextAttributes:allow];
@@ -254,6 +255,7 @@
  set link text attribute
  */
 - (UITextView * _Nonnull (^)(NSDictionary<NSAttributedStringKey,id> * _Nullable))elk_setLinkTextAttribute
+NS_AVAILABLE_IOS(7_0)
 {
     return ^(NSDictionary<NSAttributedStringKey,id> * _Nullable attrDict) {
         [self setLinkTextAttributes:attrDict];

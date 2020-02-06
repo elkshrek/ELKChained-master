@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set attribute placeholder
  */
-@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setAttrPlaceholder) (NSAttributedString * _Nonnull attrPlaceholder);
+@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setAttrPlaceholder) (NSAttributedString * _Nonnull attrPlaceholder) NS_AVAILABLE_IOS(6_0);
 
 /**
  set text color
@@ -125,7 +125,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set allows editing text attributes
  */
-@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setAllowEditTextAttribute)(BOOL allow);
+@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setAllowEditTextAttribute)(BOOL allow) NS_AVAILABLE_IOS(6_0);
 
 /**
  set left view
