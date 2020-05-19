@@ -55,12 +55,11 @@
         return self;
     };
 }
-- (CGRect (^)(void))elk_frame
+- (CGRect)elk_frame
 {
-    return ^(void) {
-        return self.frame;
-    };
+    return self.frame;
 }
+
 - (UIView * _Nonnull (^)(CGFloat))elk_setX
 {
     return ^(CGFloat x) {
@@ -97,42 +96,31 @@
         return self;
     };
 }
-- (CGFloat (^)(void))elk_x
+- (CGFloat)elk_x
 {
-    return ^(void) {
-        return self.frame.origin.x;
-    };
+    return self.frame.origin.x;
 }
-- (CGFloat (^)(void))elk_y
+- (CGFloat)elk_y
 {
-    return ^(void) {
-       return self.frame.origin.y;
-    };
+    return self.frame.origin.y;
 }
-- (CGFloat (^)(void))elk_width
+- (CGFloat)elk_width
 {
-    return ^(void) {
-        return self.frame.size.width;
-    };
+    return self.frame.size.width;
 }
-- (CGFloat (^)(void))elk_height
+- (CGFloat)elk_height
 {
-    return ^(void) {
-        return self.frame.size.height;
-    };
+    return self.frame.size.height;
 }
-- (CGFloat (^)(void))elk_maxX
+- (CGFloat)elk_maxX
 {
-    return ^(void) {
-        return CGRectGetMaxX(self.frame);
-    };
+    return CGRectGetMaxX(self.frame);
 }
-- (CGFloat (^)(void))elk_maxY
+- (CGFloat)elk_maxY
 {
-    return ^(void) {
-        return CGRectGetMaxY(self.frame);
-    };
+    return CGRectGetMaxY(self.frame);
 }
+
 - (UIView * _Nonnull (^)(CGRect))elk_setBounds
 {
     return ^(CGRect bounds) {
@@ -147,12 +135,11 @@
         return self;
     };
 }
-- (CGRect (^)(void))elk_bounds
+- (CGRect)elk_bounds
 {
-    return ^(void) {
-        return self.bounds;
-    };
+    return self.bounds;
 }
+
 - (UIView * _Nonnull (^)(CGPoint))elk_setCenter
 {
     return ^(CGPoint center) {
@@ -167,12 +154,11 @@
         return self;
     };
 }
-- (CGPoint (^)(void))elk_center
+- (CGPoint)elk_center
 {
-    return ^(void) {
-        return self.center;
-    };
+    return self.center;
 }
+
 - (UIView * _Nonnull (^)(CGFloat))elk_setCenterX
 {
     return ^(CGFloat centerX) {
@@ -191,18 +177,15 @@
         return self;
     };
 }
-- (CGFloat (^)(void))elk_centerX
+- (CGFloat)elk_centerX
 {
-    return ^(void) {
-        return self.center.x;
-    };
+    return self.center.x;
 }
-- (CGFloat (^)(void))elk_centerY
+- (CGFloat)elk_centerY
 {
-    return ^(void) {
-        return self.center.y;
-    };
+    return self.center.y;
 }
+
 - (UIView * _Nonnull (^)(CGSize))elk_setSize
 {
     return ^(CGSize size) {
@@ -221,12 +204,11 @@
         return self;
     };
 }
-- (CGSize (^)(void))elk_size
+- (CGSize)elk_size
 {
-    return ^(void) {
-        return self.frame.size;
-    };
+    return self.frame.size;
 }
+
 - (UIView * _Nonnull (^)(CGPoint))elk_setOrigin
 {
     return ^(CGPoint origin) {
@@ -245,11 +227,9 @@
         return self;
     };
 }
-- (CGPoint (^)(void))elk_origin
+- (CGPoint)elk_origin
 {
-    return ^(void) {
-        return self.frame.origin;
-    };
+    return self.frame.origin;
 }
 
 
@@ -303,6 +283,16 @@
     };
 }
 
+/// set Border with Color and Width
+- (UIView * _Nonnull (^)(UIColor * _Nullable, CGFloat))elk_setBorderColorWidth
+{
+    return ^(UIColor *_Nullable borderColor, CGFloat width) {
+        self.layer.borderColor = borderColor.CGColor;
+        self.layer.borderWidth = width;
+        return self;
+    };
+}
+
 /**
  set corner radius
  */
@@ -324,6 +314,17 @@
         return self;
     };
 }
+
+/// set Corner with Radius and masksToBounds
+- (UIView * _Nonnull (^)(CGFloat, BOOL))elk_setCornerAndMask
+{
+    return ^(CGFloat radius, BOOL bounds) {
+        self.layer.cornerRadius = radius;
+        self.layer.masksToBounds = bounds;
+        return self;
+    };
+}
+
 
 /**
  set clip to bounds
@@ -536,14 +537,12 @@
 
 
 #pragma mark - get view property
-- (BOOL (^)(void))elk_isZeroSize
+- (BOOL)elk_isZeroSize
 {
-    return ^(void) {
-        if (CGRectEqualToRect(self.frame, CGRectZero)) {
-            return YES;
-        }
-        return NO;
-    };
+    if (CGRectEqualToRect(self.frame, CGRectZero)) {
+        return YES;
+    }
+    return NO;
 }
 
 /**

@@ -10,10 +10,11 @@
 #define ELKChainedAlloy_h
 
 
+
+/// UIKit
 #import "UIView+ELKChainedAlloy.h"
 #import "UILabel+ELKChainedAlloy.h"
 #import "UIImageView+ELKChainedAlloy.h"
-
 
 #import "UIButton+ELKChainedAlloy.h"
 #import "UIControl+ELKChainedAlloy.h"
@@ -27,17 +28,12 @@
 #import "UITextField+ELKChainedAlloy.h"
 #import "UITextView+ELKChainedAlloy.h"
 
+#import "UIFont+ELKChainedAlloy.h"
 
 
-
-
+/// Foundation
 #import "NSObject+ELKChainedAlloy.h"
 #import "NSString+ELKChainedAlloy.h"
-
-
-
-#import "UIFont+ELKChainedAlloy.h"
-#import "UIColor+ELKChainedAlloy.h"
 
 
 

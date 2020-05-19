@@ -58,7 +58,18 @@
     });
     
     
-      
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.elk_setTitleForNormal(@"哈哈哈")
+    .elk_setTitleForHighlighted([NSString stringWithFormat:@"-%@-", btn.elk_titleForState(UIControlStateNormal)])
+    .elk_setImageForNormal(UIImage.new)
+    .elk_setFrameMake(100.f, 220.f, 80.f, 40.f)
+    .elk_setBackgroundColor(UIColor.orangeColor);
+    self.view.elk_addSubview(btn);
+    
+    UIView *view = [[UIView alloc] init];
+    view.elk_setFrame(btn.elk_imageRectForContentRect(btn.elk_contentRectForBounds(btn.bounds)))
+    .elk_setBackgroundColor(UIColor.greenColor);
+    self.view.elk_addSubview(view);
     
     
     

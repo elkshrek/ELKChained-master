@@ -383,6 +383,70 @@ NS_AVAILABLE_IOS(9_0)
     };
 }
 
+/// Set Title And titleColor for Button
+- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIColor * _Nonnull, UIControlState))elk_setTitleAndColor
+{
+    return ^(NSString *_Nonnull title, UIColor *_Nonnull color, UIControlState state) {
+        [self elk_setTitle:title font:nil titleColor:color forState:state];
+        return self;
+    };
+}
+
+/// Set title, Font And titleColor for Button
+- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIFont * _Nonnull, UIColor * _Nonnull, UIControlState))elk_setTitleFontAndColor
+{
+    return ^(NSString *_Nonnull title, UIFont *_Nonnull font, UIColor *_Nonnull color, UIControlState state) {
+        [self elk_setTitle:title font:font titleColor:color forState:state];
+        return self;
+    };
+}
+
+/// Set Attributed titleColor
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))elk_setAttrTitleColor
+{
+    return ^(UIColor *_Nonnull color, UIControlState state) {
+        [self elk_setTitleAttrName:NSForegroundColorAttributeName value:color forState:state];
+        return self;
+    };
+}
+
+/// Set Attributed font
+- (UIButton * _Nonnull (^)(UIFont * _Nonnull, UIControlState))elk_setAttrFont
+{
+    return ^(UIFont *_Nonnull font, UIControlState state) {
+        [self elk_setTitleAttrName:NSFontAttributeName value:font forState:state];
+        return self;
+    };
+}
+
+- (void)elk_setTitleAttrName:(NSString *)attrName value:(id)value forState:(UIControlState)state
+{
+    if (value) {
+        NSMutableAttributedString *attrTitle = [[self attributedTitleForState:state] mutableCopy];
+        if (!attrTitle) {
+            NSString *title = [self titleForState:state] ?: @"";
+            attrTitle = [[NSMutableAttributedString alloc] initWithString:title];
+        }
+        [attrTitle addAttribute:attrName value:value range:NSMakeRange(0.f, attrTitle.length)];
+        [self setAttributedTitle:attrTitle forState:state];
+    }
+}
+
+
+/// 设置Button的title Font & titleColor
+/// @param title title
+/// @param font  Font
+/// @param color titleColor
+/// @param state UIControlState
+- (void)elk_setTitle:(NSString *_Nullable)title font:(UIFont *_Nullable)font titleColor:(UIColor *_Nullable)color forState:(UIControlState)state
+{
+    title = title ?: @"";
+    font = font ?: self.titleLabel.font;
+    color = color ?: [self titleColorForState:state];
+    [self setAttributedTitle:[[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:color ,NSFontAttributeName:font}] forState:state];
+}
+
+
 #pragma mark - set button background color
 /**
  set button background color

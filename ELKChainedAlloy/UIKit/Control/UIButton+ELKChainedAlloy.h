@@ -153,6 +153,17 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 @property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setAttributedTitleForFocused)(NSAttributedString * _Nullable title) NS_AVAILABLE_IOS(9_0);
 
 
+/// Set Title And titleColor for Button
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTitleAndColor)(NSString *_Nonnull title, UIColor *_Nonnull color, UIControlState state);
+/// Set title, Font And titleColor for Button
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTitleFontAndColor)(NSString *_Nonnull title, UIFont *_Nonnull font, UIColor *_Nonnull color, UIControlState state);
+/// Set Attributed titleColor
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setAttrTitleColor)(UIColor *_Nonnull color, UIControlState state);
+/// Set Attributed font
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setAttrFont)(UIFont *_Nonnull font, UIControlState state);
+
+
+
 #pragma mark - set button background color
 /**
  set button background color

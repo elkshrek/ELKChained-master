@@ -169,6 +169,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+/// Set Font, TextColor, placeHolder for TextField
+@property (nonatomic, copy, readonly) UITextField * _Nonnull (^elk_setFontColorPlaceHolder)(UIFont *_Nullable font, UIColor *_Nullable color, NSString *placeHolder);
+
+
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

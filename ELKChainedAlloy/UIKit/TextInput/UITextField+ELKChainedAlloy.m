@@ -352,7 +352,29 @@ NS_AVAILABLE_IOS(6_0)
 }
 
 
+/// Set Font, TextColor, placeHolder for TextField
+- (UITextField * _Nonnull (^)(UIFont * _Nullable, UIColor * _Nullable, NSString * _Nonnull))elk_setFontColorPlaceHolder
+{
+    return ^(UIFont *_Nullable font, UIColor *_Nullable color, NSString *placeHolder) {
+        [self elk_setFont:font textColor:color placeHolder:placeHolder];
+        return self;
+    };
+}
 
+
+- (void)elk_setFont:(UIFont *_Nullable)font textColor:(UIColor *_Nullable)textColor placeHolder:(NSString *_Nullable)placeHolder
+{
+    if (font) {
+        self.font = font;
+    }
+    if (textColor) {
+        self.textColor = textColor;
+    }
+    if (placeHolder) {
+        self.placeholder = placeHolder;
+    }
+    
+}
 
 
 @end

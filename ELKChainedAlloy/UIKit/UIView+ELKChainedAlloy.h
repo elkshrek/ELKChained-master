@@ -36,33 +36,43 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setFrame)(CGRect frame);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setFrameMake)(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
-@property (nonatomic, copy, readonly) CGRect (^elk_frame)(void);
+@property (nonatomic, assign, readonly) CGRect elk_frame;
+
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setX)(CGFloat x);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setY)(CGFloat y);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setWidth)(CGFloat width);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setHeight)(CGFloat height);
-@property (nonatomic, copy, readonly) CGFloat (^elk_x)(void);
-@property (nonatomic, copy, readonly) CGFloat (^elk_y)(void);
-@property (nonatomic, copy, readonly) CGFloat (^elk_width)(void);
-@property (nonatomic, copy, readonly) CGFloat (^elk_height)(void);
-@property (nonatomic, copy, readonly) CGFloat (^elk_maxX)(void);
-@property (nonatomic, copy, readonly) CGFloat (^elk_maxY)(void);
+
+
+@property (nonatomic, assign, readonly) CGFloat elk_x;
+@property (nonatomic, assign, readonly) CGFloat elk_y;
+@property (nonatomic, assign, readonly) CGFloat elk_width;
+@property (nonatomic, assign, readonly) CGFloat elk_height;
+
+@property (nonatomic, assign, readonly) CGFloat elk_maxX;
+@property (nonatomic, assign, readonly) CGFloat elk_maxY;
+
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setBounds)(CGRect bounds);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setBoundsMake)(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
-@property (nonatomic, copy, readonly) CGRect (^elk_bounds)(void);
+@property (nonatomic, assign, readonly) CGRect elk_bounds;
+
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setCenter)(CGPoint cPoint);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setCenterMake)(CGFloat centerX, CGFloat centerY);
-@property (nonatomic, copy, readonly) CGPoint (^elk_center)(void);
+@property (nonatomic, assign, readonly) CGPoint elk_center;
+
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setCenterX)(CGFloat centerX);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setCenterY)(CGFloat centerY);
-@property (nonatomic, copy, readonly) CGFloat (^elk_centerX)(void);
-@property (nonatomic, copy, readonly) CGFloat (^elk_centerY)(void);
+@property (nonatomic, assign, readonly) CGFloat elk_centerX;
+@property (nonatomic, assign, readonly) CGFloat elk_centerY;
+
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setSize)(CGSize size);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setSizeMake)(CGFloat width, CGFloat height);
-@property (nonatomic, copy, readonly) CGSize (^elk_size)(void);
+@property (nonatomic, assign, readonly) CGSize elk_size;
+
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setOrigin)(CGPoint origin);
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setOriginMake)(CGFloat originX, CGFloat originY);
-@property (nonatomic, copy, readonly) CGPoint (^elk_origin)(void);
+@property (nonatomic, assign, readonly) CGPoint elk_origin;
+
 
 /**
  set background color
@@ -83,6 +93,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// set border width
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setBorderWidth)(CGFloat borderWidth);
 
+/// set Border with Color and Width
+@property (nonatomic, copy, readonly) UIView * _Nonnull (^elk_setBorderColorWidth)(UIColor *_Nullable borderColor, CGFloat width);
+
+
 /**
  set corner radius
  */
@@ -91,6 +105,11 @@ NS_ASSUME_NONNULL_BEGIN
  set mask to bounds
  */
 @property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_setMaskToBounds)(BOOL bounds);
+
+/// set Corner with Radius and masksToBounds
+@property (nonatomic, copy, readonly) UIView * _Nonnull (^elk_setCornerAndMask)(CGFloat radius, BOOL bounds);
+
+
 /**
  set clip to bounds
  */
@@ -173,7 +192,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - get view property
-@property (nonatomic, copy, readonly) BOOL (^elk_isZeroSize)(void);
+@property (nonatomic, assign, readonly) BOOL elk_isZeroSize;
 
 
 

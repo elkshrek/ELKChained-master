@@ -119,7 +119,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_drawTextInRect)(CGRect drawRect);
 
 
+/// Set Text Font And Color
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontAndColor)(UIFont *_Nullable font, UIColor *_Nullable color);
 
+/// Set Label Text, Font, Color
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontAndColor)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color);
+
+
+/// Set Text Font, Color And TextAlignment
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontColorAndAlignment)(UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment);
+
+
+/// Set Label Text, Font, Color And TextAlignment
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontColorAndAlignment)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment);
 
 
 
