@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
     s.name           = "ELKChainedAlloy"
 
-    s.version        = "1.1.5"
+    s.version        = "1.1.6"
 
     s.summary        = "基于OC的简单易用的链式编程框架，通过 . 调用方法，实现快速编程"
     s.description    = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.license        = "MIT"
     s.author         = { "Jonathan" => "Jonathan_dk@163.com" }
 
-    s.platform       = :ios
+    s.platform       = :ios, '8.0'
     s.source         = { :git => "https://github.com/CircusJonathan/ELKChained-master.git", :tag => "#{s.version}" }
     
     s.subspec 'Foundation' do |ss|

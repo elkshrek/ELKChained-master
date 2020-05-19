@@ -154,13 +154,13 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 
 
 /// Set Title And titleColor for Button
-@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTitleAndColor)(NSString *_Nonnull title, UIColor *_Nonnull color, UIControlState state);
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTitleAndColor)(NSString *_Nonnull title, UIColor *_Nonnull color, UIControlState state) NS_AVAILABLE_IOS(6_0);
 /// Set title, Font And titleColor for Button
-@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTitleFontAndColor)(NSString *_Nonnull title, UIFont *_Nonnull font, UIColor *_Nonnull color, UIControlState state);
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTitleFontAndColor)(NSString *_Nonnull title, UIFont *_Nonnull font, UIColor *_Nonnull color, UIControlState state) NS_AVAILABLE_IOS(6_0);
 /// Set Attributed titleColor
-@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setAttrTitleColor)(UIColor *_Nonnull color, UIControlState state);
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setAttrTitleColor)(UIColor *_Nonnull color, UIControlState state) NS_AVAILABLE_IOS(6_0);
 /// Set Attributed font
-@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setAttrFont)(UIFont *_Nonnull font, UIControlState state);
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setAttrFont)(UIFont *_Nonnull font, UIControlState state) NS_AVAILABLE_IOS(6_0);
 
 
 

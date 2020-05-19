@@ -120,18 +120,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// Set Text Font And Color
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontAndColor)(UIFont *_Nullable font, UIColor *_Nullable color);
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontAndColor)(UIFont *_Nullable font, UIColor *_Nullable color) NS_AVAILABLE_IOS(6_0);
 
 /// Set Label Text, Font, Color
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontAndColor)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color);
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontAndColor)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color) NS_AVAILABLE_IOS(6_0);
 
 
 /// Set Text Font, Color And TextAlignment
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontColorAndAlignment)(UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment);
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontColorAndAlignment)(UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment) NS_AVAILABLE_IOS(6_0);
 
 
 /// Set Label Text, Font, Color And TextAlignment
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontColorAndAlignment)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment);
+@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontColorAndAlignment)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment) NS_AVAILABLE_IOS(6_0);
 
 
 

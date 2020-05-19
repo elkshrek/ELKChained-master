@@ -384,7 +384,7 @@ NS_AVAILABLE_IOS(9_0)
 }
 
 /// Set Title And titleColor for Button
-- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIColor * _Nonnull, UIControlState))elk_setTitleAndColor
+- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIColor * _Nonnull, UIControlState))elk_setTitleAndColor NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSString *_Nonnull title, UIColor *_Nonnull color, UIControlState state) {
         [self elk_setTitle:title font:nil titleColor:color forState:state];
@@ -393,7 +393,7 @@ NS_AVAILABLE_IOS(9_0)
 }
 
 /// Set title, Font And titleColor for Button
-- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIFont * _Nonnull, UIColor * _Nonnull, UIControlState))elk_setTitleFontAndColor
+- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIFont * _Nonnull, UIColor * _Nonnull, UIControlState))elk_setTitleFontAndColor NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSString *_Nonnull title, UIFont *_Nonnull font, UIColor *_Nonnull color, UIControlState state) {
         [self elk_setTitle:title font:font titleColor:color forState:state];
@@ -402,7 +402,7 @@ NS_AVAILABLE_IOS(9_0)
 }
 
 /// Set Attributed titleColor
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))elk_setAttrTitleColor
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))elk_setAttrTitleColor NS_AVAILABLE_IOS(6_0)
 {
     return ^(UIColor *_Nonnull color, UIControlState state) {
         [self elk_setTitleAttrName:NSForegroundColorAttributeName value:color forState:state];
@@ -411,7 +411,7 @@ NS_AVAILABLE_IOS(9_0)
 }
 
 /// Set Attributed font
-- (UIButton * _Nonnull (^)(UIFont * _Nonnull, UIControlState))elk_setAttrFont
+- (UIButton * _Nonnull (^)(UIFont * _Nonnull, UIControlState))elk_setAttrFont NS_AVAILABLE_IOS(6_0)
 {
     return ^(UIFont *_Nonnull font, UIControlState state) {
         [self elk_setTitleAttrName:NSFontAttributeName value:font forState:state];
@@ -419,7 +419,7 @@ NS_AVAILABLE_IOS(9_0)
     };
 }
 
-- (void)elk_setTitleAttrName:(NSString *)attrName value:(id)value forState:(UIControlState)state
+- (void)elk_setTitleAttrName:(NSString *)attrName value:(id)value forState:(UIControlState)state NS_AVAILABLE_IOS(6_0)
 {
     if (value) {
         NSMutableAttributedString *attrTitle = [[self attributedTitleForState:state] mutableCopy];
@@ -438,7 +438,7 @@ NS_AVAILABLE_IOS(9_0)
 /// @param font  Font
 /// @param color titleColor
 /// @param state UIControlState
-- (void)elk_setTitle:(NSString *_Nullable)title font:(UIFont *_Nullable)font titleColor:(UIColor *_Nullable)color forState:(UIControlState)state
+- (void)elk_setTitle:(NSString *_Nullable)title font:(UIFont *_Nullable)font titleColor:(UIColor *_Nullable)color forState:(UIControlState)state NS_AVAILABLE_IOS(6_0)
 {
     title = title ?: @"";
     font = font ?: self.titleLabel.font;

@@ -231,7 +231,7 @@
 
 
 /// Set Text Font And Color
-- (UILabel * _Nonnull (^)(UIFont * _Nullable, UIColor * _Nullable))elk_setFontAndColor
+- (UILabel * _Nonnull (^)(UIFont * _Nullable, UIColor * _Nullable))elk_setFontAndColor NS_AVAILABLE_IOS(6_0)
 {
     return ^(UIFont *_Nullable font, UIColor *_Nullable color) {
         [self elk_setText:nil font:font color:color alignment:NSTextAlignmentLeft];
@@ -240,7 +240,7 @@
 }
 
 /// Set Label Text, Font, Color
-- (UILabel * _Nonnull (^)(NSString * _Nullable, UIFont * _Nullable, UIColor * _Nullable))elk_setTextFontAndColor
+- (UILabel * _Nonnull (^)(NSString * _Nullable, UIFont * _Nullable, UIColor * _Nullable))elk_setTextFontAndColor NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color) {
         [self elk_setText:text font:font color:color alignment:NSTextAlignmentLeft];
@@ -249,7 +249,7 @@
 }
 
 /// Set Text Font, Color And TextAlignment
-- (UILabel * _Nonnull (^)(UIFont * _Nullable, UIColor * _Nullable, NSTextAlignment))elk_setFontColorAndAlignment
+- (UILabel * _Nonnull (^)(UIFont * _Nullable, UIColor * _Nullable, NSTextAlignment))elk_setFontColorAndAlignment NS_AVAILABLE_IOS(6_0)
 {
     return ^(UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment) {
         [self elk_setText:nil font:font color:color alignment:alignment];
@@ -258,7 +258,7 @@
 }
 
 /// Set Label Text, Font, Color And TextAlignment
-- (UILabel * _Nonnull (^)(NSString * _Nullable, UIFont * _Nullable, UIColor * _Nullable, NSTextAlignment))elk_setTextFontColorAndAlignment
+- (UILabel * _Nonnull (^)(NSString * _Nullable, UIFont * _Nullable, UIColor * _Nullable, NSTextAlignment))elk_setTextFontColorAndAlignment NS_AVAILABLE_IOS(6_0)
 {
     return ^(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment) {
         [self elk_setText:text font:font color:color alignment:alignment];
@@ -271,7 +271,7 @@
 /// @param font      font
 /// @param color     text Color
 /// @param alignment text Alignment
-- (void)elk_setText:(NSString *_Nullable)text font:(UIFont *_Nullable)font color:(UIColor *_Nullable)color alignment:(NSTextAlignment)alignment
+- (void)elk_setText:(NSString *_Nullable)text font:(UIFont *_Nullable)font color:(UIColor *_Nullable)color alignment:(NSTextAlignment)alignment NS_AVAILABLE_IOS(6_0)
 {
     if (text) {
         self.text = text;
