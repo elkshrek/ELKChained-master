@@ -130,7 +130,7 @@ NS_AVAILABLE_IOS(6_0)
 /**
  set text alignment
  */
-- (UITextField * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment NS_AVAILABLE_IOS(6_0)
+- (UITextField * _Nonnull (^)(NSTextAlignment))elk_setTextAlignment API_AVAILABLE(ios(6.0))
 {
     return ^(NSTextAlignment textAlign) {
         [self setTextAlignment:textAlign];

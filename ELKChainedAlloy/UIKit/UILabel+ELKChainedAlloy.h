@@ -37,13 +37,13 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set attribute text
  */
-@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nonnull attrText) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UILabel * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nonnull attrText);
 
 
 /**
  set text alignment
  */
-@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setTextAlignment)(NSTextAlignment textAlign) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UILabel * _Nonnull (^elk_setTextAlignment)(NSTextAlignment textAlign);
 
 /**
  set text color
@@ -96,7 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set line break mode
  */
-@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setLineBreakMode)(NSLineBreakMode lbMode) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UILabel * _Nonnull (^elk_setLineBreakMode)(NSLineBreakMode lbMode);
 
 /**
  set number of lines
@@ -120,18 +120,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// Set Text Font And Color
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontAndColor)(UIFont *_Nullable font, UIColor *_Nullable color) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) UILabel * _Nonnull (^elk_setFontAndColor)(UIFont *_Nullable font, UIColor *_Nullable color);
 
 /// Set Label Text, Font, Color
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontAndColor)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) UILabel * _Nonnull (^elk_setTextFontAndColor)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color);
 
 
 /// Set Text Font, Color And TextAlignment
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setFontColorAndAlignment)(UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) UILabel * _Nonnull (^elk_setFontColorAndAlignment)(UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment);
 
 
 /// Set Label Text, Font, Color And TextAlignment
-@property (nonatomic, copy, readonly) UILabel * _Nonnull (^elk_setTextFontColorAndAlignment)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) UILabel * _Nonnull (^elk_setTextFontColorAndAlignment)(NSString *_Nullable text, UIFont *_Nullable font, UIColor *_Nullable color, NSTextAlignment alignment);
 
 
 

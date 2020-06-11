@@ -43,12 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set attribute text
  */
-@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nonnull attrText) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UITextField * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nonnull attrText);
 
 /**
  set attribute placeholder
  */
-@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setAttrPlaceholder) (NSAttributedString * _Nonnull attrPlaceholder) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UITextField * _Nonnull (^elk_setAttrPlaceholder) (NSAttributedString * _Nonnull attrPlaceholder);
 
 /**
  set text color
@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set text alignment
  */
-@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setTextAlignment)(NSTextAlignment textAlign) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UITextField * _Nonnull (^elk_setTextAlignment)(NSTextAlignment textAlign);
 
 /**
  set border style
@@ -125,7 +125,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set allows editing text attributes
  */
-@property (nonatomic, strong, readonly) UITextField * _Nonnull (^elk_setAllowEditTextAttribute)(BOOL allow) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UITextField * _Nonnull (^elk_setAllowEditTextAttribute)(BOOL allow);
 
 /**
  set left view

@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  defaults to CGSizeZero - setting a non-zero size enables cells that self-size via -preferredLayoutAttributesFittingAttributes:
  */
-@property (nonatomic, copy, readonly) UICollectionViewFlowLayout * _Nonnull (^elk_setEstimatedItemSize)(CGSize estimatedItemSize) NS_AVAILABLE_IOS(8_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(8_0) UICollectionViewFlowLayout * _Nonnull (^elk_setEstimatedItemSize)(CGSize estimatedItemSize);
 
 /**
  default is UICollectionViewScrollDirectionVertical
@@ -73,14 +73,14 @@ NS_ASSUME_NONNULL_BEGIN
  The reference boundary that the section insets will be defined as relative to. Defaults to `.fromContentInset`.
  NOTE: Content inset will always be respected at a minimum. For example, if the sectionInsetReference equals `.fromSafeArea`, but the adjusted content inset is greater that the combination of the safe area and section insets, then section content will be aligned with the content inset instead.
  */
-@property (nonatomic, copy, readonly) UICollectionViewFlowLayout * _Nonnull (^elk_setSectionInsetReference)(UICollectionViewFlowLayoutSectionInsetReference sectionInsetReference) API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos) UICollectionViewFlowLayout * _Nonnull (^elk_setSectionInsetReference)(UICollectionViewFlowLayoutSectionInsetReference sectionInsetReference);
 
 
 /**
  Set these properties to YES to get headers that pin to the top of the screen and footers that pin to the bottom while scrolling (similar to UITableView).
  */
-@property (nonatomic, copy, readonly) UICollectionViewFlowLayout * _Nonnull (^elk_setSectionHeadersPinToVisibleBounds)(BOOL bounds)NS_AVAILABLE_IOS(9_0);
-@property (nonatomic, copy, readonly) UICollectionViewFlowLayout * _Nonnull (^elk_setSectionFootersPinToVisibleBounds)(BOOL bounds)NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionViewFlowLayout * _Nonnull (^elk_setSectionHeadersPinToVisibleBounds)(BOOL bounds);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionViewFlowLayout * _Nonnull (^elk_setSectionFootersPinToVisibleBounds)(BOOL bounds);
 
 
 

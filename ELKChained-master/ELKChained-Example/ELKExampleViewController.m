@@ -19,6 +19,7 @@
     
     self.view.elk_setBackgroundColor(UIColor.whiteColor);
     
+    // 创建一个view，并且设置背景色，切圆角，设置border以及frame
     UIView *view = [UIView elk_makeBlock:^(UIView * _Nonnull make) {
         make.elk_setBackgroundColor(UIColor.purpleColor)
         .elk_setCornerRadius(5.f)
@@ -40,12 +41,6 @@
     .elk_setFrameMake(140.f, 100.f, 100.f, 30.f);
     self.view.elk_addSubview(view1);
     
-//    UITextView *tv = [[UITextView alloc] initWithFrame:CGRectMake(30.f, 150.f, 280.f, 70.f)];
-//    tv.text = @"这里是textview";
-//    tv.backgroundColor = UIColor.redColor;
-//    tv.textColor = UIColor.whiteColor;
-//    tv.font = [UIFont systemFontOfSize:14];
-//    [self.view addSubview:tv];
     
     UITextView *tv = [UITextView elk_makeBlock:^(UITextView * _Nonnull make) {
         make.elk_setText(@"这里是textview，我是内容我是内容~")
@@ -57,20 +52,6 @@
         .elk_setFrame(CGRectMake(30.f, 150.f, 280.f, 70.f));
     }];
     self.view.elk_addSubview(tv);
-    
-//    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(30, 240.f, 280.f, 34.f)];
-//    tf.text = @"我是textField，这里是内容";
-//    tf.placeholder = @"我是placeholder";
-//    tf.textColor = UIColor.blueColor;
-//    tf.font = [UIFont systemFontOfSize:14];
-//    tf.leftViewMode = UITextFieldViewModeAlways;
-//    UIImageView *leftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"elk_search"]];
-//    leftView.frame = CGRectMake(0.f, 0.f, 30.f, 30.f);
-//    leftView.backgroundColor = UIColor.clearColor;
-//    tf.leftView = leftView;
-//    tf.clearButtonMode = UITextFieldViewModeWhileEditing;
-//    tf.backgroundColor = UIColor.greenColor;
-//    [self.view addSubview:tf];
     
     UITextField *tf = [UITextField elk_make];
     UIImageView *leftView = [UIImageView elk_makeBlock:^(UIImageView * _Nonnull make) {

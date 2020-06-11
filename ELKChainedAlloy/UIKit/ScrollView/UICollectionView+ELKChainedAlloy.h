@@ -80,27 +80,27 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
 /**
  set prefetch data source
  */
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setPrefetchDataSource)(id<UICollectionViewDataSourcePrefetching> prefetchDataSource) NS_AVAILABLE_IOS(10_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(10_0) UICollectionView * _Nonnull (^elk_setPrefetchDataSource)(id<UICollectionViewDataSourcePrefetching> prefetchDataSource);
 /**
  set drag delegate
  */
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setDragDelegate)(id<UICollectionViewDragDelegate> dragDelegate) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UICollectionView * _Nonnull (^elk_setDragDelegate)(id<UICollectionViewDragDelegate> dragDelegate);
 /**
  set drop delegate
  */
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setDropDelegate)(id <UICollectionViewDropDelegate> dropDelegate) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UICollectionView * _Nonnull (^elk_setDropDelegate)(id <UICollectionViewDropDelegate> dropDelegate);
 
 
 /* To enable intra-app drags on iPhone, set this to YES.
  * You can also force drags to be disabled for this collection view by setting this to NO.
  * By default, For iPad this will return YES and iPhone will return NO.
  */
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setDragInteractionEnabled)(BOOL enable) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UICollectionView * _Nonnull (^elk_setDragInteractionEnabled)(BOOL enable);
 
 /* Reordering cadence affects how easily reordering occurs while dragging around a reorder-capable drop destination.
  * Default is UICollectionViewReorderingCadenceImmediate.
  */
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setReorderingCadence)(UICollectionViewReorderingCadence recoderingCadence) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);;
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UICollectionView * _Nonnull (^elk_setReorderingCadence)(UICollectionViewReorderingCadence recoderingCadence);
 
 // will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
 @property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setBackgroundView)(UIView * _Nullable backView);
@@ -141,13 +141,13 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
  transition from one layout to another
  */
 @property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setCollectionViewLayout)(UICollectionViewLayout *layout, BOOL animated);
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setCollectionViewLayoutCompletion)(UICollectionViewLayout *layout, BOOL animated, ELKCollCompletionBlock _Nullable completion) NS_AVAILABLE_IOS(7_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(7_0) UICollectionView * _Nonnull (^elk_setCollectionViewLayoutCompletion)(UICollectionViewLayout *layout, BOOL animated, ELKCollCompletionBlock _Nullable completion);
 
 
-@property (nonatomic, copy, readonly) UICollectionViewTransitionLayout * _Nonnull (^elk_startInteractiveTransitionToCollectionViewLayout)(UICollectionViewLayout *layout, UICollectionViewLayoutInteractiveTransitionCompletion _Nullable completion) NS_AVAILABLE_IOS(7_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(7_0) UICollectionViewTransitionLayout * _Nonnull (^elk_startInteractiveTransitionToCollectionViewLayout)(UICollectionViewLayout *layout, UICollectionViewLayoutInteractiveTransitionCompletion _Nullable completion);
 
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_finishInteractiveTransition)(void) NS_AVAILABLE_IOS(7_0);
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_cancelInteractiveTransition)(void) NS_AVAILABLE_IOS(7_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(7_0) UICollectionView * _Nonnull (^elk_finishInteractiveTransition)(void);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(7_0) UICollectionView * _Nonnull (^elk_cancelInteractiveTransition)(void);
 
 
 // Information about the current state of the collection view.
@@ -164,9 +164,9 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
 @property (nonatomic, copy, readonly) UICollectionViewCell * _Nullable (^elk_cellForItemAtIndexPath)(NSIndexPath * indexPath);
 
 
-@property (nonatomic, copy, readonly) UICollectionReusableView * _Nullable (^elk_supplementaryViewForElementKind)(NSString * elementKind, NSIndexPath * indexPath) NS_AVAILABLE_IOS(9_0);
-@property (nonatomic, copy, readonly) NSArray<UICollectionReusableView *> * (^elk_visibleSupplementaryViewsOfKind)(NSString * elementKind) NS_AVAILABLE_IOS(9_0);
-@property (nonatomic, copy, readonly) NSArray<NSIndexPath *> * (^elk_indexPathsForVisibleSupplementaryElementsOfKind)(NSString * elementKind) NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionReusableView * _Nullable (^elk_supplementaryViewForElementKind)(NSString * elementKind, NSIndexPath * indexPath);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) NSArray<UICollectionReusableView *> * (^elk_visibleSupplementaryViewsOfKind)(NSString * elementKind);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) NSArray<NSIndexPath *> * (^elk_indexPathsForVisibleSupplementaryElementsOfKind)(NSString * elementKind);
 
 
 // Interacting with the collection view.
@@ -192,16 +192,16 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
 
 
 // Support for reordering
-@property (nonatomic, copy, readonly) BOOL (^elk_beginInteractiveMovementForItemAtIndexPath)(NSIndexPath * indexPath) NS_AVAILABLE_IOS(9_0); // returns NO if reordering was prevented from beginning - otherwise YES
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_updateInteractiveMovementTargetPosition)(CGPoint targetPosition) NS_AVAILABLE_IOS(9_0);
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_endInteractiveMovement)(void) NS_AVAILABLE_IOS(9_0);
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_cancelInteractiveMovement)(void) NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) BOOL (^elk_beginInteractiveMovementForItemAtIndexPath)(NSIndexPath * indexPath); // returns NO if reordering was prevented from beginning - otherwise YES
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionView * _Nonnull (^elk_updateInteractiveMovementTargetPosition)(CGPoint targetPosition);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionView * _Nonnull (^elk_endInteractiveMovement)(void);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionView * _Nonnull (^elk_cancelInteractiveMovement)(void);
 
 
 
 // Support for Focus
 // defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
-@property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_remembersLastFocusedIndexPath)(BOOL remembers) NS_AVAILABLE_IOS(9_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionView * _Nonnull (^elk_remembersLastFocusedIndexPath)(BOOL remembers);
 
 
 

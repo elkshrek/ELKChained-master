@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set attribute text
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nullable attrText) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UITextView * _Nonnull (^elk_setAttributeText)(NSAttributedString * _Nullable attrText);
 
 /**
  set text color
@@ -75,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set text alignment
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setTextAlignment)(NSTextAlignment tAlignment) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UITextView * _Nonnull (^elk_setTextAlignment)(NSTextAlignment tAlignment);
 
 /**
  set <UITextViewDelegate>delegate
@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set allows editing text attributes
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setAllowEditTextAttribute)(BOOL allow) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(6_0) UITextView * _Nonnull (^elk_setAllowEditTextAttribute)(BOOL allow);
 
 /**
  set input view
@@ -110,7 +110,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set select able
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setSelectAble)(BOOL able) NS_AVAILABLE_IOS(7_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(7_0) UITextView * _Nonnull (^elk_setSelectAble)(BOOL able);
 
 /**
  set data detector types
@@ -120,12 +120,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set text container inset
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setTextContainerInset)(UIEdgeInsets inset) NS_AVAILABLE_IOS(7_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(7_0) UITextView * _Nonnull (^elk_setTextContainerInset)(UIEdgeInsets inset);
 
 /**
  set link text attribute
  */
-@property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setLinkTextAttribute)(NSDictionary<NSAttributedStringKey,id> * _Nullable attrDict) NS_AVAILABLE_IOS(7_0);
+@property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(7_0) UITextView * _Nonnull (^elk_setLinkTextAttribute)(NSDictionary<NSAttributedStringKey,id> * _Nullable attrDict);
 
 /**
  scroll range to visible

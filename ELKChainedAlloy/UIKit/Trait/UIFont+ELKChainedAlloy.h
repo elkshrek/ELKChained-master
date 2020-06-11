@@ -121,7 +121,7 @@ UIFont * _Nonnull ELK_fontWithDescriptorAndSize(UIFontDescriptor * _Nonnull desc
 /**
  Returns a font descriptor which describes the font.
  */
-@property (nonatomic, copy, readonly) UIFontDescriptor * _Nonnull (^elk_fontDescriptor)(void) NS_AVAILABLE_IOS(7_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(7_0) UIFontDescriptor * _Nonnull (^elk_fontDescriptor)(void);
 #endif
 
 

@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  allows customization of the separator frame
  */
-@property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_setSeparatorInset)(UIEdgeInsets separatorInset) NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR __TVOS_PROHIBITED;
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR __TVOS_PROHIBITED UITableViewCell * _Nonnull (^elk_setSeparatorInset)(UIEdgeInsets separatorInset);
 
 /**
  show appropriate edit controls (+/- & reorder). By default -setEditing: calls setEditing:animated: with NO for animated.
@@ -81,13 +81,13 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  set focus style
  */
-@property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_setFocusStyle)(UITableViewCellFocusStyle focusStyle) NS_AVAILABLE_IOS(9_0) UI_APPEARANCE_SELECTOR;
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UI_APPEARANCE_SELECTOR UITableViewCell * _Nonnull (^elk_setFocusStyle)(UITableViewCellFocusStyle focusStyle);
 
 /**
  Controls whether the cell in the table view allows user interaction once it is part of a drag (UITableViewCellDragStateDragging).
  Default is NO.
  */
-@property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_setUserInteractionEnabledWhileDragging)(BOOL enable) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UITableViewCell * _Nonnull (^elk_setUserInteractionEnabledWhileDragging)(BOOL enable);
 
 
 /**

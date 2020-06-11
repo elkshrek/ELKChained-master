@@ -158,17 +158,17 @@ typedef void(^ELKEnumerateLinesBlock)(NSString *line, BOOL *stop);
 /**
  uppercase String With Locale
  */
-@property (nonatomic, copy, readonly) NSString * _Nonnull (^elk_uppercaseStringWithLocale)(NSLocale * _Nullable locale) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) NSString * _Nonnull (^elk_uppercaseStringWithLocale)(NSLocale * _Nullable locale);
 
 /**
  lowercase String With Locale
  */
-@property (nonatomic, copy, readonly) NSString * _Nonnull (^elk_lowercaseStringWithLocale)(NSLocale * _Nullable locale) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) NSString * _Nonnull (^elk_lowercaseStringWithLocale)(NSLocale * _Nullable locale);
 
 /**
  capitalized String With Locale
  */
-@property (nonatomic, copy, readonly) NSString * _Nonnull (^elk_capitalizedStringWithLocale)(NSLocale * _Nullable locale) NS_AVAILABLE_IOS(6_0);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) NSString * _Nonnull (^elk_capitalizedStringWithLocale)(NSLocale * _Nullable locale);
 
 
 /**
