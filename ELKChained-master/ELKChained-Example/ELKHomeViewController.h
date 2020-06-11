@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ELKHomeViewController.h
 //  ELKChained-master
 //
 //  Created by Jonathan on 2019/6/4.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ELKHomeViewController : UIViewController
 
 
 @end

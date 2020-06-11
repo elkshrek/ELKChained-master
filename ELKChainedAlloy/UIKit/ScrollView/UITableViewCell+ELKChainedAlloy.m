@@ -178,6 +178,12 @@
 }
 
 
-
+- (UITableViewCell * _Nonnull (^)(UIColor * _Nonnull))elk_setBackgroundColor
+{
+    return ^(UIColor * _Nonnull bgColor) {
+        [self setBackgroundColor:bgColor];
+        return self;
+    };
+}
 
 @end

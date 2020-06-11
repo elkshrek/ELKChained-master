@@ -140,8 +140,15 @@
  */
 - (UIButton * _Nonnull (^)(CGRect))elk_setFrame
 {
-    return ^(CGRect f) {
-        self.frame = f;
+    return ^(CGRect frame) {
+        [self setFrame:frame];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(CGFloat, CGFloat, CGFloat, CGFloat))elk_setFrameMake
+{
+    return ^(CGFloat x, CGFloat y, CGFloat width, CGFloat height) {
+        [self setFrame:CGRectMake(x, y, width, height)];
         return self;
     };
 }
@@ -836,8 +843,13 @@ NS_AVAILABLE_IOS(6_0)
             }
             case UIControlEventPrimaryActionTriggered:
             {
-                [self addTarget:self action:@selector(elk_primaryActionTriggeredAction:) forControlEvents:UIControlEventPrimaryActionTriggered];
-                self.elk_primaryActionTriggeredBlock = block;
+                if (@available(iOS 9.0, *)) {
+                    self.elk_primaryActionTriggeredBlock = block;
+                    [self addTarget:self action:@selector(elk_primaryActionTriggeredAction:) forControlEvents:UIControlEventPrimaryActionTriggered];
+                    self.elk_primaryActionTriggeredBlock = block;
+                } else {
+                    // Fallback on earlier versions
+                }
                 break;
             }
             case UIControlEventAllTouchEvents:

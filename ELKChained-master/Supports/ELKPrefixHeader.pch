@@ -1,0 +1,19 @@
+//
+//  ELKPrefixHeader.pch
+//  ELKChained-master
+//
+//  Created by wing on 2020/6/9.
+//  Copyright © 2020 elk. All rights reserved.
+//
+
+#ifndef ELKPrefixHeader_pch
+#define ELKPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import <Masonry/Masonry.h>
+#import "ELKChainedAlloy.h"
+
+#endif /* ELKPrefixHeader_pch */

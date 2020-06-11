@@ -376,5 +376,32 @@ NS_AVAILABLE_IOS(6_0)
     
 }
 
+/**
+ set frame
+ */
+- (UITextField * _Nonnull (^)(CGRect))elk_setFrame
+{
+    return ^(CGRect frame) {
+        [self setFrame:frame];
+        return self;
+    };
+}
+- (UITextField * _Nonnull (^)(CGFloat, CGFloat, CGFloat, CGFloat))elk_setFrameMake
+{
+    return ^(CGFloat x, CGFloat y, CGFloat width, CGFloat height) {
+        [self setFrame:CGRectMake(x, y, width, height)];
+        return self;
+    };
+}
+
+- (UITextField * _Nonnull (^)(UIColor * _Nonnull))elk_setBackgroundColor
+{
+    return ^(UIColor * _Nonnull bgColor) {
+        [self setBackgroundColor:bgColor];
+        return self;
+    };
+}
+
+
 
 @end

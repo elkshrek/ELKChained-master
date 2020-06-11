@@ -90,6 +90,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) UITableViewCell * _Nonnull (^elk_setUserInteractionEnabledWhileDragging)(BOOL enable) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);
 
 
+/**
+ set background color
+ */
+@property (nonatomic, strong, readonly) UITableViewCell * _Nonnull (^elk_setBackgroundColor)(UIColor * _Nonnull bgColor);
 
 
 @end

@@ -205,6 +205,18 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
 
 
 
+/**
+ set frame
+ */
+@property (nonatomic, strong, readonly) UICollectionView * _Nonnull (^elk_setFrame)(CGRect frame);
+@property (nonatomic, strong, readonly) UICollectionView * _Nonnull (^elk_setFrameMake)(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
+
+/**
+ set background color
+ */
+@property (nonatomic, strong, readonly) UICollectionView * _Nonnull (^elk_setBackgroundColor)(UIColor * _Nonnull bgColor);
+
+
 
 @end
 

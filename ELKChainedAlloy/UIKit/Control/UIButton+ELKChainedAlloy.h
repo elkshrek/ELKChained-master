@@ -57,13 +57,14 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 
 
 // The tintColor is inherited through the superview hierarchy. See UIView for more information.
-@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTintColor)(UIColor * tintColor) NS_AVAILABLE_IOS(5_0);
+@property (nonatomic, copy, readonly) UIButton * _Nonnull (^elk_setTintColor)(UIColor * tintColor) NS_AVAILABLE_IOS(7_0);
 
 
 /**
  set frame
  */
 @property (nonatomic, strong, readonly) UIButton * _Nonnull (^elk_setFrame)(CGRect frame);
+@property (nonatomic, strong, readonly) UIButton * _Nonnull (^elk_setFrameMake)(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
 
 
 /**
@@ -298,10 +299,6 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
  add target/action for particular event.
  */
 @property (nonatomic, strong, readonly) UIButton * _Nonnull(^elk_addTargetBlock)(UIControlEvents event, ELKControlEventBlock block);
-
-
-
-
 
 
 

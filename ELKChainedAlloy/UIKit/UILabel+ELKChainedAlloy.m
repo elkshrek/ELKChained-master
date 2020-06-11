@@ -286,5 +286,32 @@
 }
 
 
+/**
+ set frame
+ */
+- (UILabel * _Nonnull (^)(CGRect))elk_setFrame
+{
+    return ^(CGRect frame) {
+        [self setFrame:frame];
+        return self;
+    };
+}
+- (UILabel * _Nonnull (^)(CGFloat, CGFloat, CGFloat, CGFloat))elk_setFrameMake
+{
+    return ^(CGFloat x, CGFloat y, CGFloat width, CGFloat height) {
+        [self setFrame:CGRectMake(x, y, width, height)];
+        return self;
+    };
+}
+
+- (UILabel * _Nonnull (^)(UIColor * _Nonnull))elk_setBackgroundColor
+{
+    return ^(UIColor * _Nonnull bgColor) {
+        [self setBackgroundColor:bgColor];
+        return self;
+    };
+}
+
+
 
 @end

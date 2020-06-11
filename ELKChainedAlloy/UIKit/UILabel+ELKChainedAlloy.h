@@ -135,6 +135,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+/**
+ set frame
+ */
+@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setFrame)(CGRect frame);
+@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setFrameMake)(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
+
+/**
+ set background color
+ */
+@property (nonatomic, strong, readonly) UILabel * _Nonnull (^elk_setBackgroundColor)(UIColor * _Nonnull bgColor);
+
 
 @end
 

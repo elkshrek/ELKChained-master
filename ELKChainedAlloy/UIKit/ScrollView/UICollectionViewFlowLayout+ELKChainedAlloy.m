@@ -11,6 +11,34 @@
 @implementation UICollectionViewFlowLayout (ELKChainedAlloy)
 
 
+
+/**
+ make a UICollectionViewFlowLayout, return a new object
+ 
+ @return a new UICollectionViewFlowLayout
+ */
++ (UICollectionViewFlowLayout * _Nonnull)elk_make
+{
+    UICollectionViewFlowLayout *flayout = [[UICollectionViewFlowLayout alloc] init];
+    return flayout;
+}
+
+/**
+ make a UICollectionViewFlowLayout, return a new object
+ 
+ @param block block
+ @return a new UICollectionViewFlowLayout
+ */
++ (UICollectionViewFlowLayout *)elk_makeBlock:(void (^)(UICollectionViewFlowLayout * _Nonnull))block
+{
+    UICollectionViewFlowLayout *fLayout = [[UICollectionViewFlowLayout alloc] init];
+    if (block) {
+        block(fLayout);
+    }
+    return fLayout;
+}
+
+
 /**
  set Minimum Line Spacing
  */

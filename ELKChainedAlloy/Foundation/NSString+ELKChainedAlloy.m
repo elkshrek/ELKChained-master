@@ -11,14 +11,6 @@
 @implementation NSString (ELKChainedAlloy)
 
 
-//- (NSString * _Nonnull (^)(NSString * _Nonnull, int))elk_stringByAppendingFormat
-//{
-//    return ^(NSString * formatt, __attribute__((format(__NSString__, 1, 2))) moreParams) {
-//        return [self stringByAppendingFormat:formatt, moreParams];
-//    };
-//}
-
-
 
 /**
  compare

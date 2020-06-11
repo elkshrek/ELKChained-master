@@ -239,7 +239,7 @@
 - (UIView * _Nonnull (^)(UIColor * _Nonnull))elk_setBackgroundColor
 {
     return ^(UIColor * _Nonnull bgColor) {
-        self.backgroundColor = bgColor;
+        [self setBackgroundColor:bgColor];
         return self;
     };
 }
@@ -419,8 +419,8 @@
  */
 - (UIView * _Nonnull (^)(BOOL))elk_endEditing
 {
-    return ^(BOOL endEditing) {
-        [self endEditing:endEditing];
+    return ^(BOOL force) {
+        [self endEditing:force];
         return self;
     };
 }

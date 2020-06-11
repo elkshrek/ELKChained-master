@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4EE0F2038670A0D70827FE /* libPods-ELKChained-master.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B462DD4D0CD2A52E8795F7C1 /* libPods-ELKChained-master.a */; };
 		AB0AFBA722A66C1D00903D14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AFBA622A66C1D00903D14 /* AppDelegate.m */; };
-		AB0AFBAA22A66C1D00903D14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AFBA922A66C1D00903D14 /* ViewController.m */; };
+		AB0AFBAA22A66C1D00903D14 /* ELKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AFBA922A66C1D00903D14 /* ELKHomeViewController.m */; };
 		AB0AFBAD22A66C1D00903D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0AFBAB22A66C1D00903D14 /* Main.storyboard */; };
 		AB0AFBAF22A66C1E00903D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0AFBAE22A66C1E00903D14 /* Assets.xcassets */; };
 		AB0AFBB222A66C1E00903D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0AFBB022A66C1E00903D14 /* LaunchScreen.storyboard */; };
@@ -30,6 +31,9 @@
 		AB2F687822B7449B0068ACA6 /* UIButton+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F686622B7449A0068ACA6 /* UIButton+ELKChainedAlloy.m */; };
 		AB2F687922B7449B0068ACA6 /* NSObject+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F686C22B7449A0068ACA6 /* NSObject+ELKChainedAlloy.m */; };
 		AB2F687A22B7449B0068ACA6 /* NSString+ELKChainedAlloy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F686D22B7449A0068ACA6 /* NSString+ELKChainedAlloy.m */; };
+		AB4BCB9E24907BDE00B55A44 /* ELKExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4BCB9D24907BDE00B55A44 /* ELKExampleViewController.m */; };
+		ABE3FB4B248F7B0A00804804 /* ELKHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE3FB4A248F7B0A00804804 /* ELKHomeTableViewCell.m */; };
+		ABE3FB4E248F7EEE00804804 /* ELKHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE3FB4D248F7EEE00804804 /* ELKHomeHeadView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11F3DA704B78AA90B6314D51 /* Pods-ELKChained-master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELKChained-master.debug.xcconfig"; path = "Target Support Files/Pods-ELKChained-master/Pods-ELKChained-master.debug.xcconfig"; sourceTree = "<group>"; };
 		AB0AFBA222A66C1D00903D14 /* ELKChained-master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELKChained-master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0AFBA522A66C1D00903D14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB0AFBA622A66C1D00903D14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AB0AFBA822A66C1D00903D14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AB0AFBA922A66C1D00903D14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AB0AFBA822A66C1D00903D14 /* ELKHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELKHomeViewController.h; sourceTree = "<group>"; };
+		AB0AFBA922A66C1D00903D14 /* ELKHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELKHomeViewController.m; sourceTree = "<group>"; };
 		AB0AFBAC22A66C1D00903D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB0AFBAE22A66C1E00903D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB0AFBB122A66C1E00903D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,6 +102,15 @@
 		AB2F686C22B7449A0068ACA6 /* NSObject+ELKChainedAlloy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ELKChainedAlloy.m"; sourceTree = "<group>"; };
 		AB2F686D22B7449A0068ACA6 /* NSString+ELKChainedAlloy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ELKChainedAlloy.m"; sourceTree = "<group>"; };
 		AB2F686E22B7449A0068ACA6 /* ELKChainedAlloy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELKChainedAlloy.h; sourceTree = "<group>"; };
+		AB4BCB9C24907BDE00B55A44 /* ELKExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELKExampleViewController.h; sourceTree = "<group>"; };
+		AB4BCB9D24907BDE00B55A44 /* ELKExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELKExampleViewController.m; sourceTree = "<group>"; };
+		ABE3FB46248F79CA00804804 /* ELKPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELKPrefixHeader.pch; sourceTree = "<group>"; };
+		ABE3FB49248F7B0A00804804 /* ELKHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELKHomeTableViewCell.h; sourceTree = "<group>"; };
+		ABE3FB4A248F7B0A00804804 /* ELKHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELKHomeTableViewCell.m; sourceTree = "<group>"; };
+		ABE3FB4C248F7EEE00804804 /* ELKHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELKHomeHeadView.h; sourceTree = "<group>"; };
+		ABE3FB4D248F7EEE00804804 /* ELKHomeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELKHomeHeadView.m; sourceTree = "<group>"; };
+		B462DD4D0CD2A52E8795F7C1 /* libPods-ELKChained-master.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ELKChained-master.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F7DEE95746CA894ABBA03E /* Pods-ELKChained-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELKChained-master.release.xcconfig"; path = "Target Support Files/Pods-ELKChained-master/Pods-ELKChained-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4EE0F2038670A0D70827FE /* libPods-ELKChained-master.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +139,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5885ED1B4270015EDACD9861 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B462DD4D0CD2A52E8795F7C1 /* libPods-ELKChained-master.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB0AFB9922A66C1D00903D14 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +154,8 @@
 				AB0AFBBD22A66C1E00903D14 /* ELKChained-masterTests */,
 				AB0AFBC822A66C1E00903D14 /* ELKChained-masterUITests */,
 				AB0AFBA322A66C1D00903D14 /* Products */,
+				DAADDD7768B513EB236FF194 /* Pods */,
+				5885ED1B4270015EDACD9861 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,8 +288,11 @@
 		AB322F222318199700FC393E /* ELKChained-Example */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AFBA822A66C1D00903D14 /* ViewController.h */,
-				AB0AFBA922A66C1D00903D14 /* ViewController.m */,
+				AB0AFBA822A66C1D00903D14 /* ELKHomeViewController.h */,
+				AB0AFBA922A66C1D00903D14 /* ELKHomeViewController.m */,
+				AB4BCB9C24907BDE00B55A44 /* ELKExampleViewController.h */,
+				AB4BCB9D24907BDE00B55A44 /* ELKExampleViewController.m */,
+				ABE3FB48248F7AEA00804804 /* View */,
 			);
 			path = "ELKChained-Example";
 			sourceTree = "<group>";
@@ -272,13 +300,34 @@
 		AB5FD8B522A78F5200BD8A3E /* Supports */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AFBAB22A66C1D00903D14 /* Main.storyboard */,
 				AB0AFBAE22A66C1E00903D14 /* Assets.xcassets */,
-				AB0AFBB022A66C1E00903D14 /* LaunchScreen.storyboard */,
+				ABE3FB46248F79CA00804804 /* ELKPrefixHeader.pch */,
 				AB0AFBB322A66C1E00903D14 /* Info.plist */,
+				AB0AFBB022A66C1E00903D14 /* LaunchScreen.storyboard */,
 				AB0AFBB422A66C1E00903D14 /* main.m */,
+				AB0AFBAB22A66C1D00903D14 /* Main.storyboard */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		ABE3FB48248F7AEA00804804 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABE3FB4C248F7EEE00804804 /* ELKHomeHeadView.h */,
+				ABE3FB4D248F7EEE00804804 /* ELKHomeHeadView.m */,
+				ABE3FB49248F7B0A00804804 /* ELKHomeTableViewCell.h */,
+				ABE3FB4A248F7B0A00804804 /* ELKHomeTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAADDD7768B513EB236FF194 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11F3DA704B78AA90B6314D51 /* Pods-ELKChained-master.debug.xcconfig */,
+				E7F7DEE95746CA894ABBA03E /* Pods-ELKChained-master.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +337,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB0AFBCE22A66C1E00903D14 /* Build configuration list for PBXNativeTarget "ELKChained-master" */;
 			buildPhases = (
+				1BDB16D79CE80241BBAC10A2 /* [CP] Check Pods Manifest.lock */,
 				AB0AFB9E22A66C1D00903D14 /* Sources */,
 				AB0AFB9F22A66C1D00903D14 /* Frameworks */,
 				AB0AFBA022A66C1D00903D14 /* Resources */,
@@ -343,6 +393,7 @@
 		AB0AFB9A22A66C1D00903D14 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ELK;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = elk;
 				TargetAttributes = {
@@ -406,6 +457,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BDB16D79CE80241BBAC10A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ELKChained-master-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB0AFB9E22A66C1D00903D14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -414,12 +490,15 @@
 				AB2F687422B7449B0068ACA6 /* UITextView+ELKChainedAlloy.m in Sources */,
 				AB2F687722B7449B0068ACA6 /* UIControl+ELKChainedAlloy.m in Sources */,
 				AB2F687622B7449B0068ACA6 /* UIView+ELKChainedAlloy.m in Sources */,
+				AB4BCB9E24907BDE00B55A44 /* ELKExampleViewController.m in Sources */,
 				AB2F687322B7449B0068ACA6 /* UIImageView+ELKChainedAlloy.m in Sources */,
 				AB2F687822B7449B0068ACA6 /* UIButton+ELKChainedAlloy.m in Sources */,
-				AB0AFBAA22A66C1D00903D14 /* ViewController.m in Sources */,
+				ABE3FB4B248F7B0A00804804 /* ELKHomeTableViewCell.m in Sources */,
+				AB0AFBAA22A66C1D00903D14 /* ELKHomeViewController.m in Sources */,
 				AB2F687122B7449B0068ACA6 /* UIScrollView+ELKChainedAlloy.m in Sources */,
 				AB0AFBB522A66C1E00903D14 /* main.m in Sources */,
 				AB2F686F22B7449B0068ACA6 /* UICollectionView+ELKChainedAlloy.m in Sources */,
+				ABE3FB4E248F7EEE00804804 /* ELKHomeHeadView.m in Sources */,
 				AB2F687A22B7449B0068ACA6 /* NSString+ELKChainedAlloy.m in Sources */,
 				AB0AFBA722A66C1D00903D14 /* AppDelegate.m in Sources */,
 				AB2F687522B7449B0068ACA6 /* UITextField+ELKChainedAlloy.m in Sources */,
@@ -597,10 +676,13 @@
 		};
 		AB0AFBCF22A66C1E00903D14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11F3DA704B78AA90B6314D51 /* Pods-ELKChained-master.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J8BTB638K2;
+				GCC_PREFIX_HEADER = "ELKChained-master/Supports/ELKPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ELKChained-master/Supports/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,10 +697,13 @@
 		};
 		AB0AFBD022A66C1E00903D14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7F7DEE95746CA894ABBA03E /* Pods-ELKChained-master.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J8BTB638K2;
+				GCC_PREFIX_HEADER = "ELKChained-master/Supports/ELKPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ELKChained-master/Supports/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

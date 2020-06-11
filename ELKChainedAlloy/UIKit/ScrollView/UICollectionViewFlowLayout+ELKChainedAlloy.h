@@ -14,6 +14,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ make a UICollectionViewFlowLayout, return a new object
+ 
+ @return a new UICollectionViewFlowLayout
+ */
++ (UICollectionViewFlowLayout * _Nonnull)elk_make;
+
+/**
+ make a UICollectionViewFlowLayout, return a new object
+ 
+ @param block block
+ @return a new UICollectionViewFlowLayout
+ */
++ (UICollectionViewFlowLayout * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UICollectionViewFlowLayout * _Nonnull make))block;
+
+
+/**
  set Minimum Line Spacing
  */
 @property (nonatomic, copy, readonly) UICollectionViewFlowLayout * _Nonnull (^elk_setMinimumLineSpacing)(CGFloat minimumLineSpacing);

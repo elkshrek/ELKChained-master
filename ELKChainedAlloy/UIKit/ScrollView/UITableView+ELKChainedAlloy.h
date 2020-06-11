@@ -208,6 +208,16 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
 
 
 
+/**
+ set frame
+ */
+@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_setFrame)(CGRect frame);
+@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_setFrameMake)(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
+
+/**
+ set background color
+ */
+@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_setBackgroundColor)(UIColor * _Nonnull bgColor);
 
 
 @end

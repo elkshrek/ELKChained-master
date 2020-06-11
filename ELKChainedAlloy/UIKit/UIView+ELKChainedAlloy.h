@@ -145,7 +145,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  end editing
  */
-@property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_endEditing)(BOOL endEditing);
+@property (nonatomic, strong, readonly) UIView * _Nonnull (^elk_endEditing)(BOOL force);
 
 /**
  remove from superview
