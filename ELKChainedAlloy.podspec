@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
     s.name           = "ELKChainedAlloy"
 
-    s.version        = "1.1.7"
+    s.version        = "1.1.8"
 
     s.summary        = "基于OC的简单易用的链式编程框架，通过 . 调用方法，实现快速编程"
     s.description    = <<-DESC
