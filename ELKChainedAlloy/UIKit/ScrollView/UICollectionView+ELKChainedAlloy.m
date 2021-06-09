@@ -233,6 +233,24 @@ NS_AVAILABLE_IOS(6_0)
     };
 }
 
+/// dequeueConfiguredReusableCellWithRegistration:forIndexPath:item:
+- (__kindof UICollectionViewCell * _Nonnull (^)(UICollectionViewCellRegistration * _Nonnull, NSIndexPath * _Nonnull, id _Nonnull))elk_dequeueConfiguredReusableCell
+{
+    return ^(UICollectionViewCellRegistration *registration, NSIndexPath *indexPath, id item) {
+        UICollectionViewCell *cell = [self dequeueConfiguredReusableCellWithRegistration:registration forIndexPath:indexPath item:item];
+        return cell;
+    };
+}
+
+/// dequeueConfiguredReusableSupplementaryViewWithRegistration:forIndexPath:
+- (__kindof UICollectionReusableView * _Nonnull (^)(UICollectionViewSupplementaryRegistration * _Nonnull, NSIndexPath * _Nonnull))elk_dequeueConfiguredReusableSupplementaryView
+{
+    return ^(UICollectionViewSupplementaryRegistration *registration, NSIndexPath *indexPath) {
+        UICollectionReusableView *reusableView = [self dequeueConfiguredReusableSupplementaryViewWithRegistration:registration forIndexPath:indexPath];
+        return reusableView;
+    };
+}
+
 // These properties control whether items can be selected, and if so, whether multiple items can be simultaneously selected.
 - (UICollectionView * _Nonnull (^)(BOOL))elk_setAllowsSelection
 {
@@ -528,7 +546,7 @@ NS_AVAILABLE_IOS(7_0)
 
 // Support for Focus
 // defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
-- (UICollectionView * _Nonnull (^)(BOOL))elk_remembersLastFocusedIndexPath
+- (UICollectionView * _Nonnull (^)(BOOL))elk_setRemembersLastFocusedIndexPath
 {
     return ^(BOOL remembers) {
         [self setRemembersLastFocusedIndexPath:remembers];
@@ -536,6 +554,14 @@ NS_AVAILABLE_IOS(7_0)
     };
 }
 
+// When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
+- (UICollectionView * _Nonnull (^)(BOOL))elk_setSelectionFollowsFocus
+{
+    return ^(BOOL focus) {
+        self.selectionFollowsFocus = focus;
+        return self;
+    };
+}
 
 /**
  set frame
@@ -566,5 +592,38 @@ NS_AVAILABLE_IOS(7_0)
     };
 }
 
+// Editing
+
+/* Controls the editing state for the receiver.
+ */
+- (UICollectionView * _Nonnull (^)(BOOL))elk_setEditing
+{
+    return ^(BOOL editing) {
+        self.editing = editing;
+        return self;
+    };
+}
+
+/* Controls whether an item can be selected when the receiver is editing.
+ * Defaults to NO.
+ */
+- (UICollectionView * _Nonnull (^)(BOOL))elk_setAllowsSelectionDuringEditing
+{
+    return ^(BOOL allow) {
+        self.allowsSelectionDuringEditing = allow;
+        return self;
+    };
+}
+
+/* Controls whether multiple item selection can occur when the receiver is editing.
+ * Defaults to NO.
+ */
+- (UICollectionView * _Nonnull (^)(BOOL))elk_setAllowsMultipleSelectionDuringEditing
+{
+    return ^(BOOL allowMultiple) {
+        self.allowsMultipleSelectionDuringEditing = allowMultiple;
+        return self;
+    };
+}
 
 @end

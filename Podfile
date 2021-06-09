@@ -2,7 +2,7 @@
 platform :ios, '9.0'
 
 target 'ELKChained-master' do
-  
+  inhibit_all_warnings!
 
   pod 'Masonry'
 

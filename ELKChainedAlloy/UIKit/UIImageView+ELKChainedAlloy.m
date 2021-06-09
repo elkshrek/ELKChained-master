@@ -95,6 +95,14 @@
     };
 }
 
+/// setPreferredSymbolConfiguration
+- (UIImageView * _Nonnull (^)(UIImageSymbolConfiguration * _Nullable))elk_setPreferredSymbolConfiguration
+{
+    return ^(UIImageSymbolConfiguration *_Nullable preferredSymbolConfiguration) {
+        self.preferredSymbolConfiguration = preferredSymbolConfiguration;
+        return self;
+    };
+}
 
 /**
  set animation images

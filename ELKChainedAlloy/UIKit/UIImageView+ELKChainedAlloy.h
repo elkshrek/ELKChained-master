@@ -58,7 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) UIImageView * _Nonnull (^elk_setHighlighted)(BOOL highLight);
 
-
+/// setPreferredSymbolConfiguration
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(13.0),tvos(13.0),watchos(6.0)) UIImageView * _Nonnull (^elk_setPreferredSymbolConfiguration)(UIImageSymbolConfiguration *_Nullable preferredSymbolConfiguration);
 
 /**
  set animation images

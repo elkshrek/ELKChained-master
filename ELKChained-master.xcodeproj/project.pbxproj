@@ -288,10 +288,10 @@
 		AB322F222318199700FC393E /* ELKChained-Example */ = {
 			isa = PBXGroup;
 			children = (
-				AB0AFBA822A66C1D00903D14 /* ELKHomeViewController.h */,
-				AB0AFBA922A66C1D00903D14 /* ELKHomeViewController.m */,
 				AB4BCB9C24907BDE00B55A44 /* ELKExampleViewController.h */,
 				AB4BCB9D24907BDE00B55A44 /* ELKExampleViewController.m */,
+				AB0AFBA822A66C1D00903D14 /* ELKHomeViewController.h */,
+				AB0AFBA922A66C1D00903D14 /* ELKHomeViewController.m */,
 				ABE3FB48248F7AEA00804804 /* View */,
 			);
 			path = "ELKChained-Example";
@@ -394,7 +394,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ELK;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = elk;
 				TargetAttributes = {
 					AB0AFBA122A66C1D00903D14 = {
@@ -588,6 +588,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -647,6 +648,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -684,7 +686,7 @@
 				DEVELOPMENT_TEAM = J8BTB638K2;
 				GCC_PREFIX_HEADER = "ELKChained-master/Supports/ELKPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ELKChained-master/Supports/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -705,7 +707,7 @@
 				DEVELOPMENT_TEAM = J8BTB638K2;
 				GCC_PREFIX_HEADER = "ELKChained-master/Supports/ELKPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ELKChained-master/Supports/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

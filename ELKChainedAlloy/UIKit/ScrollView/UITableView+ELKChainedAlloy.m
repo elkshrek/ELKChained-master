@@ -118,6 +118,33 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
     };
 }
 
+/// set prefetchDataSource
+- (UITableView * _Nonnull (^)(id<UITableViewDataSourcePrefetching> _Nullable))elk_setPrefetchDataSource
+{
+    return ^(id<UITableViewDataSourcePrefetching> _Nullable prefetchDataSource) {
+        self.prefetchDataSource = prefetchDataSource;
+        return self;
+    };
+}
+
+/// set dragDelegate
+- (UITableView * _Nonnull (^)(id<UITableViewDragDelegate> _Nullable))elk_setDragDelegate
+{
+    return ^(id<UITableViewDragDelegate> _Nullable dragDelegate) {
+        self.dragDelegate = dragDelegate;
+        return self;
+    };
+}
+
+/// set dropDelegate
+- (UITableView * _Nonnull (^)(id<UITableViewDropDelegate> _Nullable))elk_setDropDelegate
+{
+    return ^(id<UITableViewDropDelegate> _Nullable dropDelegate) {
+        self.dropDelegate = dropDelegate;
+        return self;
+    };
+}
+
 /**
  set table header view
  */
@@ -181,6 +208,26 @@ NS_AVAILABLE_IOS(7_0)
 {
     return ^(CGFloat estRowHeight) {
         [self setEstimatedRowHeight:estRowHeight];
+        return self;
+    };
+}
+
+/// default is UITableViewAutomaticDimension, set to 0 to disable
+/// setEstimatedSectionHeaderHeight:
+- (UITableView * _Nonnull (^)(CGFloat))elk_setEstimatedSectionHeaderHeight
+{
+    return ^(CGFloat estHeaderHeight) {
+        self.estimatedSectionHeaderHeight = estHeaderHeight;
+        return self;
+    };
+}
+
+/// default is UITableViewAutomaticDimension, set to 0 to disable
+/// setEstimatedSectionFooterHeight:
+- (UITableView * _Nonnull (^)(CGFloat))elk_setEstimatedSectionFooterHeight
+{
+    return ^(CGFloat estFooterHeight) {
+        self.estimatedSectionFooterHeight = estFooterHeight;
         return self;
     };
 }
@@ -251,6 +298,15 @@ NS_AVAILABLE_IOS(7_0)
 {
     return ^(UIEdgeInsets inset) {
         [self setSeparatorInset:inset];
+        return self;
+    };
+}
+
+// Changes how custom separatorInset values are interpreted. The default value is UITableViewSeparatorInsetFromCellEdges
+- (UITableView * _Nonnull (^)(UITableViewSeparatorInsetReference))elk_setSeparatorInsetReference
+{
+    return ^(UITableViewSeparatorInsetReference reference) {
+        self.separatorInsetReference = reference;
         return self;
     };
 }
@@ -416,6 +472,27 @@ NS_AVAILABLE_IOS(5_0)
     };
 }
 
+// When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
+- (UITableView * _Nonnull (^)(BOOL))elk_setSelectionFollowsFocus
+{
+    return ^(BOOL focus) {
+        self.selectionFollowsFocus = focus;
+        return self;
+    };
+}
+
+// Drag & Drop
+
+// To enable intra-app drags on iPhone, set this to YES.
+// You can also force drags to be disabled for this table view by setting this to NO.
+// By default, this will return YES on iPad and NO on iPhone.
+- (UITableView * _Nonnull (^)(BOOL))elk_setDragInteractionEnabled
+{
+    return ^(BOOL enable) {
+        self.dragInteractionEnabled = enable;
+        return self;
+    };
+}
 
 /**
  set frame

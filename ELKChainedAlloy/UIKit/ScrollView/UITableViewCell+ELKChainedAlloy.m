@@ -10,6 +10,66 @@
 
 @implementation UITableViewCell (ELKChainedAlloy)
 
+/// Requests the cell update its configuration for its current state. This method is called automatically
+/// when the cell's `configurationState` may have changed, as well as in other circumstances where an
+/// update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+/// setNeedsUpdateConfiguration
+- (UITableViewCell * _Nonnull (^)(void))elk_setNeedsUpdateConfiguration
+{
+    return ^(void) {
+        [self setNeedsUpdateConfiguration];
+        return self;
+    };
+}
+
+/// Returns a default list content configuration for the cell's style.
+- (UIListContentConfiguration * _Nonnull (^)(void))elk_defaultContentConfiguration
+{
+    return ^(void) {
+        UIListContentConfiguration *configList = [self defaultContentConfiguration];
+        return configList;
+    };
+}
+
+/// Setting a content configuration replaces the existing contentView of the cell with a new content view instance from the configuration,
+/// or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
+/// The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+- (UITableViewCell * _Nonnull (^)(id<UIContentConfiguration> _Nullable))elk_setContentConfiguration
+{
+    return ^(id<UIContentConfiguration> _Nullable contentConfiguration) {
+        self.contentConfiguration = contentConfiguration;
+        return self;
+    };
+}
+
+/// When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the cell's
+/// configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+- (UITableViewCell * _Nonnull (^)(BOOL))elk_setAutomaticallyUpdatesContentConfiguration
+{
+    return ^(BOOL config) {
+        self.automaticallyUpdatesContentConfiguration = config;
+        return self;
+    };
+}
+
+/// Setting a background configuration supersedes the cell's backgroundView, selectedBackgroundView, and multipleSelectionBackgroundView. The default value is nil.
+- (UITableViewCell * _Nonnull (^)(UIBackgroundConfiguration * _Nonnull))elk_setBackgroundConfiguration
+{
+    return ^(UIBackgroundConfiguration *config) {
+        self.backgroundConfiguration = config;
+        return self;
+    };
+}
+
+/// When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the cell's
+/// configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+- (UITableViewCell * _Nonnull (^)(BOOL))elk_setAutomaticallyUpdatesBackgroundConfiguration
+{
+    return ^(BOOL autoConfig) {
+        self.automaticallyUpdatesBackgroundConfiguration = autoConfig;
+        return self;
+    };
+}
 
 /**
  default is UITableViewCellSelectionStyleDefault.

@@ -48,7 +48,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) UIControl * _Nonnull (^elk_removeTarget)(id _Nullable target, SEL _Nullable selector, UIControlEvents contEvent);
 
+/// Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with the same identifier replace previously added actions. You may add multiple UIActions for corresponding controlEvents, and you may add the same action to multiple controlEvents.
+/// addAction:forControlEvents:
+@property (nonatomic, strong, readonly) API_AVAILABLE(ios(14.0)) UIControl * _Nonnull (^elk_addAction)(UIAction *_Nonnull action, UIControlEvents controlEvents);
 
+/// Removes the action from the set of passed control events.
+/// removeAction:forControlEvents:
+@property (nonatomic, strong, readonly) API_AVAILABLE(ios(14.0)) UIControl * _Nonnull (^elk_removeAction)(UIAction *_Nonnull action, UIControlEvents controlEvents);
+
+/// Removes the action with the provided identifier from the set of passed control events.
+/// removeActionForIdentifier:forControlEvents:
+@property (nonatomic, strong, readonly) API_AVAILABLE(ios(14.0)) UIControl * _Nonnull (^elk_removeActionForIdentifier)(UIActionIdentifier actIdentifier, UIControlEvents controlEvts);
 
 
 @end

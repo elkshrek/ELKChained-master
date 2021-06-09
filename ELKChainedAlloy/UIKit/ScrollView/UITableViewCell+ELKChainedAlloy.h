@@ -12,6 +12,30 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableViewCell (ELKChainedAlloy)
 
+/// Requests the cell update its configuration for its current state. This method is called automatically
+/// when the cell's `configurationState` may have changed, as well as in other circumstances where an
+/// update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+/// setNeedsUpdateConfiguration
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UITableViewCell * _Nonnull (^elk_setNeedsUpdateConfiguration)(void);
+
+/// Returns a default list content configuration for the cell's style.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UIListContentConfiguration *(^elk_defaultContentConfiguration)(void);
+
+/// Setting a content configuration replaces the existing contentView of the cell with a new content view instance from the configuration,
+/// or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
+/// The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UITableViewCell * _Nonnull (^elk_setContentConfiguration)(id<UIContentConfiguration> _Nullable contentConfiguration);
+
+/// When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the cell's
+/// configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UITableViewCell * _Nonnull (^elk_setAutomaticallyUpdatesContentConfiguration)(BOOL config);
+
+/// Setting a background configuration supersedes the cell's backgroundView, selectedBackgroundView, and multipleSelectionBackgroundView. The default value is nil.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UITableViewCell * _Nonnull (^elk_setBackgroundConfiguration)(UIBackgroundConfiguration *config);
+
+/// When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the cell's
+/// configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UITableViewCell * _Nonnull (^elk_setAutomaticallyUpdatesBackgroundConfiguration)(BOOL autoConfig);
 
 /**
  default is UITableViewCellSelectionStyleDefault.

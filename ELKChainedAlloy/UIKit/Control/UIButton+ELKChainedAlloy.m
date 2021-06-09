@@ -535,6 +535,17 @@ NS_AVAILABLE_IOS(9_0)
     };
 }
 
+/**
+ set Perferred Symbol Configuration For Image In State
+ */
+- (UIButton * _Nonnull (^)(UIImageSymbolConfiguration * _Nullable, UIControlState))elk_setPreferredSymbolConfiguration
+{
+    return ^(UIImageSymbolConfiguration *_Nullable configuration, UIControlState state) {
+        [self setPreferredSymbolConfiguration:configuration forImageInState:state];
+        return self;
+    };
+}
+
 
 #pragma mark - set button image
 /**
@@ -696,6 +707,47 @@ NS_AVAILABLE_IOS(9_0)
     };
 }
 
+// default is UIButtonRoleNormal
+- (UIButton * _Nonnull (^)(UIButtonRole))elk_setRole
+API_AVAILABLE(ios(14.0))
+{
+    return ^(UIButtonRole role) {
+        [self setRole:role];
+        return self;
+    };
+}
+
+/// Enables this button's built-in pointer interaction.
+- (UIButton * _Nonnull (^)(BOOL))elk_setPointerInteractionEnable
+{
+    return ^(BOOL enable) {
+        [self setPointerInteractionEnabled:enable];
+        return self;
+    };
+}
+
+/*!
+ * @abstract Called when the system pointer hovers over this button if its pointer interaction is enabled. The
+ *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
+ *           a customized version of the system provided style or return an entirely custom one.
+ */
+- (UIButton * _Nonnull (^)(UIButtonPointerStyleProvider _Nullable))elk_setPointStyleProvider
+{
+    return ^(UIButtonPointerStyleProvider provider) {
+        [self setPointerStyleProvider:provider];
+        return self;
+    };
+}
+
+/// An optional menu for the button to display. The button will automatically enable or disable its contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+- (UIButton * _Nonnull (^)(UIMenu * _Nullable))elk_setMenu
+{
+    return ^(UIMenu *menu) {
+        [self setMenu:menu];
+        return self;
+    };
+}
+
 // these getters only take a single state value
 - (NSString * _Nullable (^)(UIControlState))elk_titleForState
 {
@@ -727,6 +779,13 @@ NS_AVAILABLE_IOS(9_0)
         return [self backgroundImageForState:state];
     };
 }
+- (UIImageSymbolConfiguration * _Nullable (^)(UIControlState))elk_preferredSymbolConfigurationForImageInState
+API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0))
+{
+    return ^(UIControlState state) {
+        return [self preferredSymbolConfigurationForImageInState:state];
+    };
+}
 - (NSAttributedString * _Nullable (^)(UIControlState))elk_attributedTitleForState
 NS_AVAILABLE_IOS(6_0)
 {
@@ -734,7 +793,14 @@ NS_AVAILABLE_IOS(6_0)
         return [self attributedTitleForState:state];
     };
 }
-
+// normal/highlighted/selected/disabled. can return nil
+- (UIImageSymbolConfiguration * _Nullable (^)(void))elk_currentPreferredSymbolConfiguration
+API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0))
+{
+    return ^(void) {
+        return [self currentPreferredSymbolConfiguration];
+    };
+}
 
 // these return the rectangle for the background (assumes bounds), the content (image + title) and for the image and title separately. the content rect is calculated based
 // on the title and image size and padding and then adjusted based on the control content alignment. there are no draw methods since the contents

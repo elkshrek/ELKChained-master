@@ -69,12 +69,21 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
 /**
  set dataSource
  */
-@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_setDataSource)(id<UITableViewDataSource> _Nullable dataSource);
+@property (nonatomic, copy, readonly) UITableView * _Nonnull (^elk_setDataSource)(id<UITableViewDataSource> _Nullable dataSource);
 
 /**
  set delegate
  */
-@property (nonatomic, strong, readonly) UITableView * _Nonnull (^elk_setDelegate)(id<UITableViewDelegate> _Nullable delegate);
+@property (nonatomic, copy, readonly) UITableView * _Nonnull (^elk_setDelegate)(id<UITableViewDelegate> _Nullable delegate);
+
+/// set prefetchDataSource
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(10.0)) UITableView * _Nonnull (^elk_setPrefetchDataSource)(id<UITableViewDataSourcePrefetching> _Nullable prefetchDataSource);
+
+/// set dragDelegate
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UITableView * _Nonnull (^elk_setDragDelegate)(id<UITableViewDragDelegate> _Nullable dragDelegate);
+
+/// set dropDelegate
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UITableView * _Nonnull (^elk_setDropDelegate)(id<UITableViewDropDelegate> _Nullable dropDelegate);
 
 /**
  set table header view
@@ -106,6 +115,14 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
  */
 @property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(7_0) UITableView * _Nonnull (^elk_setEstimatedRowHeight)(CGFloat estRowHeight);
 
+/// default is UITableViewAutomaticDimension, set to 0 to disable
+/// setEstimatedSectionHeaderHeight:
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(7.0)) UITableView * _Nonnull (^elk_setEstimatedSectionHeaderHeight)(CGFloat estHeaderHeight);
+
+/// default is UITableViewAutomaticDimension, set to 0 to disable
+/// setEstimatedSectionFooterHeight:
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(7.0)) UITableView * _Nonnull (^elk_setEstimatedSectionFooterHeight)(CGFloat estFooterHeight);
+
 /**
  set section index color
  */
@@ -135,6 +152,9 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
  set separator inset
  */
 @property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(7_0) UITableView * _Nonnull (^elk_setSeparatInset)(UIEdgeInsets inset);
+
+// Changes how custom separatorInset values are interpreted. The default value is UITableViewSeparatorInsetFromCellEdges
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0), tvos(11.0)) UITableView * _Nonnull (^elk_setSeparatorInsetReference)(UITableViewSeparatorInsetReference reference);
 
 /**
  register class for cell reuse identifier
@@ -206,7 +226,14 @@ UITableView * _Nonnull ELK_makeTableViewBlock(UITableViewStyle style, ELKTableVi
  */
 @property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(5_0) UITableView * _Nonnull (^elk_setAllowsMultSelectDuringEdit)(BOOL allowMult);
 
+// When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos) UITableView * _Nonnull (^elk_setSelectionFollowsFocus)(BOOL focus);
 
+// Drag & Drop
+// To enable intra-app drags on iPhone, set this to YES.
+// You can also force drags to be disabled for this table view by setting this to NO.
+// By default, this will return YES on iPad and NO on iPhone.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos) UITableView * _Nonnull (^elk_setDragInteractionEnabled)(BOOL enable);
 
 /**
  set frame

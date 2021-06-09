@@ -89,6 +89,37 @@
 }
 
 
+/// Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with the same identifier replace previously added actions. You may add multiple UIActions for corresponding controlEvents, and you may add the same action to multiple controlEvents.
+/// addAction:forControlEvents:
+- (UIControl * _Nonnull (^)(UIAction * _Nonnull, UIControlEvents))elk_addAction
+API_AVAILABLE(ios(14.0))
+{
+    return ^(UIAction *_Nonnull action, UIControlEvents controlEvents) {
+        [self addAction:action forControlEvents:controlEvents];
+        return self;
+    };
+}
 
+/// Removes the action from the set of passed control events.
+/// removeAction:forControlEvents:
+- (UIControl * _Nonnull (^)(UIAction * _Nonnull, UIControlEvents))elk_removeAction
+API_AVAILABLE(ios(14.0))
+{
+    return ^(UIAction *_Nonnull action, UIControlEvents controlEvents) {
+        [self removeAction:action forControlEvents:controlEvents];
+        return self;
+    };
+}
+
+/// Removes the action with the provided identifier from the set of passed control events.
+/// removeActionForIdentifier:forControlEvents:
+- (UIControl * _Nonnull (^)(UIActionIdentifier _Nonnull, UIControlEvents))elk_removeActionForIdentifier
+API_AVAILABLE(ios(14.0))
+{
+    return ^(UIActionIdentifier actIdentifier, UIControlEvents controlEvts) {
+        [self removeActionForIdentifier:actIdentifier forControlEvents:controlEvts];
+        return self;
+    };
+}
 
 @end

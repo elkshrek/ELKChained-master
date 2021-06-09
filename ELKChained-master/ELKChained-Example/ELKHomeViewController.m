@@ -36,6 +36,11 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    [self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(self.view.elk_width);
+        make.height.mas_equalTo(280);
+    }];
+    [self.headView layoutIfNeeded];
     
 }
 

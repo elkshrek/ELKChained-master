@@ -29,10 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIScrollView * _Nonnull)elk_makeBlock:(void (^ _Nullable)(UIScrollView * _Nonnull make))block;
 
 
-
-
-
-
 /**
  set content offset
  */

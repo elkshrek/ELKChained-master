@@ -145,6 +145,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) UITextView * _Nonnull (^elk_setBackgroundColor)(UIColor * _Nonnull bgColor);
 
+// When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(13.0)) UITextView * _Nonnull (^elk_setUsesStandardTextScaling)(BOOL usesStandardTextScaling);
 
 
 @end

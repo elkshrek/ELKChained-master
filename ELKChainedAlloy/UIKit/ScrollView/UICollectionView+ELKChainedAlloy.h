@@ -118,6 +118,11 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
 @property (nonatomic, copy, readonly) __kindof UICollectionViewCell * _Nonnull (^elk_dequeueReusableCell)(NSString * _Nonnull identifier, NSIndexPath * _Nonnull indexPath);
 @property (nonatomic, copy, readonly) __kindof UICollectionReusableView * _Nonnull (^elk_dequeueReusableSupplementaryView)(NSString * _Nonnull elementKind, NSString * _Nonnull identifier, NSIndexPath * _Nonnull indexPath);
 
+/// dequeueConfiguredReusableCellWithRegistration:forIndexPath:item:
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0),tvos(14.0)) __kindof UICollectionViewCell * _Nonnull (^elk_dequeueConfiguredReusableCell)(UICollectionViewCellRegistration *registration, NSIndexPath *indexPath, id item);
+
+/// dequeueConfiguredReusableSupplementaryViewWithRegistration:forIndexPath:
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0),tvos(14.0)) __kindof UICollectionReusableView * _Nonnull (^elk_dequeueConfiguredReusableSupplementaryView)(UICollectionViewSupplementaryRegistration *registration, NSIndexPath *indexPath);
 
 // These properties control whether items can be selected, and if so, whether multiple items can be simultaneously selected.
 @property (nonatomic, copy, readonly) UICollectionView * _Nonnull (^elk_setAllowsSelection)(BOOL allows);// default is YES
@@ -201,9 +206,10 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
 
 // Support for Focus
 // defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
-@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionView * _Nonnull (^elk_remembersLastFocusedIndexPath)(BOOL remembers);
+@property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(9_0) UICollectionView * _Nonnull (^elk_setRemembersLastFocusedIndexPath)(BOOL remembers);
 
-
+// When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos) UICollectionView * _Nonnull (^elk_setSelectionFollowsFocus)(BOOL focus);
 
 /**
  set frame
@@ -217,6 +223,22 @@ UICollectionView * _Nonnull ELK_makeCollectionViewBlock(UICollectionViewLayout *
 @property (nonatomic, strong, readonly) UICollectionView * _Nonnull (^elk_setBackgroundColor)(UIColor * _Nonnull bgColor);
 
 
+
+// Editing
+
+/* Controls the editing state for the receiver.
+ */
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UICollectionView * _Nonnull (^elk_setEditing)(BOOL editing);
+
+/* Controls whether an item can be selected when the receiver is editing.
+ * Defaults to NO.
+ */
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UICollectionView * _Nonnull (^elk_setAllowsSelectionDuringEditing)(BOOL allow);
+
+/* Controls whether multiple item selection can occur when the receiver is editing.
+ * Defaults to NO.
+ */
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0)) UICollectionView * _Nonnull (^elk_setAllowsMultipleSelectionDuringEditing)(BOOL allowMultiple);
 
 @end
 

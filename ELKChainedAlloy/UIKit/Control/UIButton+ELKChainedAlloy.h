@@ -204,6 +204,12 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 @property (nonatomic, strong, readonly) NS_AVAILABLE_IOS(9_0) UIButton * _Nonnull(^elk_setBackgroundImageForFocused)(UIImage * _Nonnull image);
 
 
+/**
+ set Perferred Symbol Configuration For Image In State
+ */
+@property (nonatomic, copy, readonly) UI_APPEARANCE_SELECTOR API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0)) UIButton *_Nonnull (^elk_setPreferredSymbolConfiguration)(UIImageSymbolConfiguration *_Nullable configuration, UIControlState state);
+
+
 #pragma mark - set button image
 /**
  set button image with UIControlState
@@ -269,6 +275,21 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 // default is NO. if YES, show a simple feedback (currently a glow) while highlighted
 @property (nonatomic, copy, readonly) __TVOS_PROHIBITED UIButton * _Nonnull (^elk_setShowsTouchWhenHighlighted)(BOOL shows);
 
+// default is UIButtonRoleNormal
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0)) UIButton * _Nonnull (^elk_setRole)(UIButtonRole role);
+
+/// Enables this button's built-in pointer interaction.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos) UIButton * _Nonnull (^elk_setPointerInteractionEnable)(BOOL enable);
+
+/*!
+ * @abstract Called when the system pointer hovers over this button if its pointer interaction is enabled. The
+ *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
+ *           a customized version of the system provided style or return an entirely custom one.
+ */
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos) NS_REFINED_FOR_SWIFT UIButton * _Nonnull (^elk_setPointStyleProvider)(UIButtonPointerStyleProvider _Nullable provider);
+
+/// An optional menu for the button to display. The button will automatically enable or disable its contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos) UIButton * _Nonnull (^elk_setMenu)(UIMenu * _Nullable menu);
 
 // these getters only take a single state value
 @property (nonatomic, copy, readonly) NSString * _Nullable (^elk_titleForState)(UIControlState state);
@@ -276,9 +297,9 @@ typedef void(^ELKControlEventBlock)(UIButton *sender);
 @property (nonatomic, copy, readonly) UIColor * _Nullable (^elk_titleShadowColorForState)(UIControlState state);
 @property (nonatomic, copy, readonly) UIImage * _Nullable (^elk_imageForState)(UIControlState state);
 @property (nonatomic, copy, readonly) UIImage * _Nullable (^elk_backgroundImageForState)(UIControlState state);
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0)) UIImageSymbolConfiguration * _Nullable (^elk_preferredSymbolConfigurationForImageInState)(UIControlState state);
 @property (nonatomic, copy, readonly) NS_AVAILABLE_IOS(6_0) NSAttributedString * _Nullable (^elk_attributedTitleForState)(UIControlState state);
-
-
+@property (nonatomic, copy, readonly) API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0)) UIImageSymbolConfiguration *_Nullable (^elk_currentPreferredSymbolConfiguration)(void); // normal/highlighted/selected/disabled. can return nil
 
 // these return the rectangle for the background (assumes bounds), the content (image + title) and for the image and title separately. the content rect is calculated based
 // on the title and image size and padding and then adjusted based on the control content alignment. there are no draw methods since the contents
